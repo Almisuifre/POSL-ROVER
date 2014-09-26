@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date mar. 23 sept. 2014 12:43:10 CEST
+EESchema Schematic File Version 2  date ven. 26 sept. 2014 15:28:32 CEST
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -37,7 +37,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 1
 Title ""
-Date "23 sep 2014"
+Date "26 sep 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -45,6 +45,8 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+Text Notes 950  2450 0    60   ~ 0
+0.2 = R200\n1.2 = 1R2
 Text Notes 9250 4150 0    60   ~ 0
 +6V
 Text Notes 9250 3950 0    60   ~ 0
@@ -354,7 +356,7 @@ L R R4
 U 1 1 54214917
 P 4950 4100
 F 0 "R4" V 5030 4100 50  0000 C CNN
-F 1 "R" V 4950 4100 50  0000 C CNN
+F 1 "0.2" V 4950 4100 50  0000 C CNN
 	1    4950 4100
 	0    1    1    0   
 $EndComp
@@ -363,7 +365,7 @@ L R R3
 U 1 1 5421490C
 P 4950 1700
 F 0 "R3" V 5030 1700 50  0000 C CNN
-F 1 "R" V 4950 1700 50  0000 C CNN
+F 1 "0,2" V 4950 1700 50  0000 C CNN
 	1    4950 1700
 	0    1    1    0   
 $EndComp
@@ -372,7 +374,7 @@ L R R2
 U 1 1 54214907
 P 4200 4750
 F 0 "R2" V 4280 4750 50  0000 C CNN
-F 1 "R" V 4200 4750 50  0000 C CNN
+F 1 "1.2" V 4200 4750 50  0000 C CNN
 	1    4200 4750
 	1    0    0    -1  
 $EndComp
@@ -381,7 +383,7 @@ L R R1
 U 1 1 54214900
 P 4200 2300
 F 0 "R1" V 4280 2300 50  0000 C CNN
-F 1 "R" V 4200 2300 50  0000 C CNN
+F 1 "1.2" V 4200 2300 50  0000 C CNN
 	1    4200 2300
 	1    0    0    -1  
 $EndComp

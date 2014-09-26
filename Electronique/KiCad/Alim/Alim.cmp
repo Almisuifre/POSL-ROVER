@@ -1,0 +1,129 @@
+Cmp-Mod V01 Created by CvPCB (2011-05-25)-stable date = ven. 26 sept. 2014 16:02:39 CEST
+
+BeginCmp
+TimeStamp = /542148DF;
+Reference = C1;
+ValeurCmp = CAPAPOL;
+IdModule  = CPR10X16;
+EndCmp
+
+BeginCmp
+TimeStamp = /54214975;
+Reference = C2;
+ValeurCmp = CAPAPOL;
+IdModule  = CPR10X16;
+EndCmp
+
+BeginCmp
+TimeStamp = /5421497E;
+Reference = C3;
+ValeurCmp = CAPAPOL;
+IdModule  = CPR10X16;
+EndCmp
+
+BeginCmp
+TimeStamp = /5421497B;
+Reference = C4;
+ValeurCmp = CAPAPOL;
+IdModule  = CPR10X16;
+EndCmp
+
+BeginCmp
+TimeStamp = /54214981;
+Reference = C5;
+ValeurCmp = CAPAPOL;
+IdModule  = CPR10X16;
+EndCmp
+
+BeginCmp
+TimeStamp = /542148C0;
+Reference = P1;
+ValeurCmp = CONN_2;
+IdModule  = ;
+EndCmp
+
+BeginCmp
+TimeStamp = /542149BC;
+Reference = P2;
+ValeurCmp = CONN_2;
+IdModule  = bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /542149B3;
+Reference = P3;
+ValeurCmp = CONN_2;
+IdModule  = bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /54214900;
+Reference = R1;
+ValeurCmp = R;
+IdModule  = R-CMS-1;
+EndCmp
+
+BeginCmp
+TimeStamp = /54214907;
+Reference = R2;
+ValeurCmp = R;
+IdModule  = R-CMS-1;
+EndCmp
+
+BeginCmp
+TimeStamp = /5421490C;
+Reference = R3;
+ValeurCmp = R;
+IdModule  = R-CMS-2;
+EndCmp
+
+BeginCmp
+TimeStamp = /54214917;
+Reference = R4;
+ValeurCmp = R;
+IdModule  = R-CMS-2;
+EndCmp
+
+BeginCmp
+TimeStamp = /54214989;
+Reference = REG1;
+ValeurCmp = L4940V85;
+IdModule  = ;
+EndCmp
+
+BeginCmp
+TimeStamp = /5421499A;
+Reference = REG2;
+ValeurCmp = L4940V85;
+IdModule  = ;
+EndCmp
+
+BeginCmp
+TimeStamp = /542148EE;
+Reference = T1;
+ValeurCmp = MMBT2907A;
+IdModule  = ;
+EndCmp
+
+BeginCmp
+TimeStamp = /542148F7;
+Reference = T2;
+ValeurCmp = MMBT2907A;
+IdModule  = ;
+EndCmp
+
+BeginCmp
+TimeStamp = /54214931;
+Reference = T3;
+ValeurCmp = NJVMJD44H11;
+IdModule  = ;
+EndCmp
+
+BeginCmp
+TimeStamp = /54214937;
+Reference = T4;
+ValeurCmp = NJVMJD44H11;
+IdModule  = ;
+EndCmp
+
+EndListe
