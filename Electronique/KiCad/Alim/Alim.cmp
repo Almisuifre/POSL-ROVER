@@ -1,45 +1,52 @@
-Cmp-Mod V01 Created by CvPCB (2011-05-25)-stable date = ven. 26 sept. 2014 16:02:39 CEST
+Cmp-Mod V01 Created by CvPCB (2011-05-25)-stable date = sam. 27 sept. 2014 13:00:19 CEST
+
+BeginCmp
+TimeStamp = /54266710;
+Reference = C1;
+ValeurCmp = 2200µF/63V;
+IdModule  = CPOL-G-CMS;
+EndCmp
 
 BeginCmp
 TimeStamp = /542148DF;
-Reference = C1;
-ValeurCmp = CAPAPOL;
-IdModule  = CPR10X16;
+Reference = C2;
+ValeurCmp = 2200µF/63V;
+IdModule  = CPOL-G-CMS;
 EndCmp
 
 BeginCmp
 TimeStamp = /54214975;
-Reference = C2;
+Reference = C3;
 ValeurCmp = CAPAPOL;
-IdModule  = CPR10X16;
+IdModule  = SM1206POL2;
 EndCmp
 
 BeginCmp
 TimeStamp = /5421497E;
-Reference = C3;
+Reference = C4;
 ValeurCmp = CAPAPOL;
-IdModule  = CPR10X16;
+IdModule  = SM1206POL2;
 EndCmp
 
 BeginCmp
 TimeStamp = /5421497B;
-Reference = C4;
+Reference = C5;
 ValeurCmp = CAPAPOL;
-IdModule  = CPR10X16;
+IdModule  = SM1206POL2;
 EndCmp
 
 BeginCmp
 TimeStamp = /54214981;
-Reference = C5;
+Reference = C6;
 ValeurCmp = CAPAPOL;
-IdModule  = CPR10X16;
+IdModule  = SM1206POL2;
 EndCmp
 
 BeginCmp
 TimeStamp = /542148C0;
 Reference = P1;
 ValeurCmp = CONN_2;
-IdModule  = ;
+IdModule  = Connecteur-CI;
 EndCmp
 
 BeginCmp
@@ -59,28 +66,28 @@ EndCmp
 BeginCmp
 TimeStamp = /54214900;
 Reference = R1;
-ValeurCmp = R;
+ValeurCmp = 1.2;
 IdModule  = R-CMS-1;
 EndCmp
 
 BeginCmp
 TimeStamp = /54214907;
 Reference = R2;
-ValeurCmp = R;
+ValeurCmp = 1.2;
 IdModule  = R-CMS-1;
 EndCmp
 
 BeginCmp
 TimeStamp = /5421490C;
 Reference = R3;
-ValeurCmp = R;
+ValeurCmp = 0,2;
 IdModule  = R-CMS-2;
 EndCmp
 
 BeginCmp
 TimeStamp = /54214917;
 Reference = R4;
-ValeurCmp = R;
+ValeurCmp = 0.2;
 IdModule  = R-CMS-2;
 EndCmp
 
@@ -88,42 +95,42 @@ BeginCmp
 TimeStamp = /54214989;
 Reference = REG1;
 ValeurCmp = L4940V85;
-IdModule  = ;
+IdModule  = T0220-CMS-Rad;
 EndCmp
 
 BeginCmp
 TimeStamp = /5421499A;
 Reference = REG2;
 ValeurCmp = L4940V85;
-IdModule  = ;
+IdModule  = T0220-CMS-Rad;
 EndCmp
 
 BeginCmp
 TimeStamp = /542148EE;
 Reference = T1;
 ValeurCmp = MMBT2907A;
-IdModule  = ;
+IdModule  = SOT23BEC;
 EndCmp
 
 BeginCmp
 TimeStamp = /542148F7;
 Reference = T2;
 ValeurCmp = MMBT2907A;
-IdModule  = ;
+IdModule  = SOT23BEC;
 EndCmp
 
 BeginCmp
 TimeStamp = /54214931;
 Reference = T3;
 ValeurCmp = NJVMJD44H11;
-IdModule  = ;
+IdModule  = DPAK2;
 EndCmp
 
 BeginCmp
 TimeStamp = /54214937;
 Reference = T4;
 ValeurCmp = NJVMJD44H11;
-IdModule  = ;
+IdModule  = DPAK2;
 EndCmp
 
 EndListe
