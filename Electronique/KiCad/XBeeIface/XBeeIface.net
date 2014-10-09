@@ -1,0 +1,55 @@
+# EESchema Netlist Version 1.1 created  lun. 29 sept. 2014 13:56:49 CEST
+(
+ ( /54293FD9 Conn-4fils P1 CONN_4
+  ( 1 N-000019 )
+  ( 2 N-000021 )
+  ( 3 N-000018 )
+  ( 4 N-000002 )
+ )
+ ( /54294025 R4 R1 10K
+  ( 1 N-000020 )
+  ( 2 N-000021 )
+ )
+ ( /54294031 R4 R2 15K
+  ( 1 N-000020 )
+  ( 2 N-000019 )
+ )
+ ( /54293FB9 XBeePro XBP1 XBEEPRO
+  ( 1 N-000002 )
+  ( 2 N-000018 )
+  ( 3 N-000020 )
+  ( 4 ? )
+  ( 5 ? )
+  ( 6 ? )
+  ( 7 ? )
+  ( 8 ? )
+  ( 9 ? )
+  ( 10 N-000019 )
+  ( 11 ? )
+  ( 12 ? )
+  ( 13 ? )
+  ( 14 ? )
+  ( 15 ? )
+  ( 16 ? )
+  ( 17 ? )
+  ( 18 ? )
+  ( 19 ? )
+  ( 20 ? )
+ )
+)
+*
+{ Allowed footprints by component:
+$component R1
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component R2
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$endfootprintlist
+}

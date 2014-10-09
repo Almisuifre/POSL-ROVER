@@ -1,0 +1,31 @@
+Cmp-Mod V01 Created by CvPCB (2011-05-25)-stable date = lun. 29 sept. 2014 13:56:49 CEST
+
+BeginCmp
+TimeStamp = /54293FD9;
+Reference = P1;
+ValeurCmp = CONN_4;
+IdModule  = Conn-4fils;
+EndCmp
+
+BeginCmp
+TimeStamp = /54294025;
+Reference = R1;
+ValeurCmp = 10K;
+IdModule  = R4;
+EndCmp
+
+BeginCmp
+TimeStamp = /54294031;
+Reference = R2;
+ValeurCmp = 15K;
+IdModule  = R4;
+EndCmp
+
+BeginCmp
+TimeStamp = /54293FB9;
+Reference = XBP1;
+ValeurCmp = XBEEPRO;
+IdModule  = XBeePro;
+EndCmp
+
+EndListe
