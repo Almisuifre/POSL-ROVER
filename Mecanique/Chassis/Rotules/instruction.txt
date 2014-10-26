@@ -1,0 +1,9 @@
+Instruction pour imprimer le fichier Rotule_Type1_Prussa en couche de 0,1 sur prussa I3.
+
+1/ La température doit être légèrement réduite. 215° initial (chez moi) -> 205°C 
+2/ Le flow étant pas mauvais à 100% je le laisse à 100%
+3/ La vitesse est de 20mm/s sauf pour le first layer qui lui est à 10mm/s
+4/ Le plateau est fixé à 60°C (il peut y avoir de la rétractation en cours de route. Voir pour imprimé sur plus froids).
+5/ La distance entre le plateau de verre et la buse est d'une feuille de papier + un quart de tours de clef sur vis M3 à pas e 0.5mm.
+
+Pour la petite histoire, si ça peut rassuré, il faut jouer sur tous les paramètres et de surcroît faire de nombreux essais avant d'arrivé à un résultat correct. Cela à été aussi le cas de la première version qui elle demande plus de précisons sur X et Y.
