@@ -1,4 +1,4 @@
-EESchema-DOCLIB  Version 2.0  Date: mar. 23 sept. 2014 12:05:44 CEST
+EESchema-DOCLIB  Version 2.0  Date: lun. 29 sept. 2014 13:17:01 CEST
 #
 $CMP L4940V85
 D L4940
@@ -13,6 +13,11 @@ $ENDCMP
 $CMP NJVMJD44H11
 D NJVMJD44H11
 K NJVMJD44H11
+$ENDCMP
+#
+$CMP XBEEPRO
+D XBeePro
+K XBee
 $ENDCMP
 #
 #End Doc Library

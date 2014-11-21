@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date sam. 27 sept. 2014 09:30:36 CEST
+EESchema Schematic File Version 2  date mar. 04 nov. 2014 14:59:27 CET
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -37,7 +37,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 1
 Title ""
-Date "27 sep 2014"
+Date "4 nov 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -55,37 +55,7 @@ Wire Wire Line
 Wire Wire Line
 	2550 1900 2450 1900
 Wire Wire Line
-	8700 4100 6600 4100
-Wire Wire Line
 	8750 1700 6600 1700
-Wire Wire Line
-	6800 5550 6800 5450
-Connection ~ 6100 5000
-Wire Wire Line
-	6100 5000 7250 5000
-Wire Wire Line
-	7250 5000 7250 4900
-Connection ~ 7950 5000
-Wire Wire Line
-	7950 5000 7650 5000
-Wire Wire Line
-	7650 5000 7650 4900
-Wire Wire Line
-	7950 5550 7950 5450
-Connection ~ 7950 4100
-Connection ~ 4450 5350
-Wire Wire Line
-	4450 5250 4450 5350
-Wire Wire Line
-	5200 4100 5600 4100
-Connection ~ 4450 4100
-Wire Wire Line
-	4450 4100 4450 4250
-Connection ~ 4050 1700
-Wire Wire Line
-	4700 4100 4050 4100
-Wire Wire Line
-	4050 4100 4050 1700
 Wire Wire Line
 	6800 3200 6800 3100
 Wire Wire Line
@@ -130,27 +100,6 @@ Connection ~ 6100 2650
 Connection ~ 6800 2650
 Wire Wire Line
 	7900 3200 7900 3100
-Wire Wire Line
-	4200 4100 4200 4500
-Connection ~ 4200 4100
-Wire Wire Line
-	4200 5000 4200 5350
-Wire Wire Line
-	4200 5350 6100 5350
-Wire Wire Line
-	6100 5350 6100 4750
-Wire Wire Line
-	5400 4100 5400 4750
-Wire Wire Line
-	5400 4750 5100 4750
-Connection ~ 5400 4100
-Wire Wire Line
-	7950 4100 7950 5050
-Wire Wire Line
-	7450 4900 7450 5000
-Wire Wire Line
-	6800 5050 6800 5000
-Connection ~ 6800 5000
 Wire Wire Line
 	8750 1500 8600 1500
 Wire Wire Line
@@ -203,33 +152,6 @@ Text Notes 1600 1950 0    60   ~ 0
 0V
 Text Notes 1550 1750 0    60   ~ 0
 +11.1V
-$Comp
-L GND #PWR02
-U 1 1 542149E6
-P 6800 5550
-F 0 "#PWR02" H 6800 5550 30  0001 C CNN
-F 1 "GND" H 6800 5480 30  0001 C CNN
-	1    6800 5550
-	1    0    0    -1  
-$EndComp
-$Comp
-L GND #PWR03
-U 1 1 542149E4
-P 7950 5550
-F 0 "#PWR03" H 7950 5550 30  0001 C CNN
-F 1 "GND" H 7950 5480 30  0001 C CNN
-	1    7950 5550
-	1    0    0    -1  
-$EndComp
-$Comp
-L GND #PWR04
-U 1 1 542149E1
-P 7450 5000
-F 0 "#PWR04" H 7450 5000 30  0001 C CNN
-F 1 "GND" H 7450 4930 30  0001 C CNN
-	1    7450 5000
-	1    0    0    -1  
-$EndComp
 $Comp
 L GND #PWR05
 U 1 1 542149DE
@@ -312,39 +234,12 @@ F 1 "CONN_2" V 9150 1600 40  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L L4940V85 REG2
-U 1 1 5421499A
-P 7450 4600
-F 0 "REG2" V 7850 4750 60  0000 C CNN
-F 1 "L4940V85" V 7100 4800 60  0000 C CNN
-	1    7450 4600
-	1    0    0    -1  
-$EndComp
-$Comp
 L L4940V85 REG1
 U 1 1 54214989
 P 7400 2250
 F 0 "REG1" V 7800 2400 60  0000 C CNN
 F 1 "L4940V85" V 7050 2450 60  0000 C CNN
 	1    7400 2250
-	1    0    0    -1  
-$EndComp
-$Comp
-L CAPAPOL C6
-U 1 1 54214981
-P 7950 5250
-F 0 "C6" H 8000 5350 50  0000 L CNN
-F 1 "CAPAPOL" H 8000 5150 50  0000 L CNN
-	1    7950 5250
-	1    0    0    -1  
-$EndComp
-$Comp
-L CAPAPOL C4
-U 1 1 5421497E
-P 6800 5250
-F 0 "C4" H 6850 5350 50  0000 L CNN
-F 1 "CAPAPOL" H 6850 5150 50  0000 L CNN
-	1    6800 5250
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -366,30 +261,12 @@ F 1 "CAPAPOL" H 6850 2800 50  0000 L CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L NJVMJD44H11 T4
-U 1 1 54214937
-P 6100 4250
-F 0 "T4" H 6150 3900 60  0000 C CNN
-F 1 "NJVMJD44H11" H 6300 4550 60  0000 C CNN
-	1    6100 4250
-	0    1    1    0   
-$EndComp
-$Comp
 L NJVMJD44H11 T3
 U 1 1 54214931
 P 6100 1850
 F 0 "T3" H 6150 1500 60  0000 C CNN
 F 1 "NJVMJD44H11" H 6300 2150 60  0000 C CNN
 	1    6100 1850
-	0    1    1    0   
-$EndComp
-$Comp
-L R R4
-U 1 1 54214917
-P 4950 4100
-F 0 "R4" V 5030 4100 50  0000 C CNN
-F 1 "0.2" V 4950 4100 50  0000 C CNN
-	1    4950 4100
 	0    1    1    0   
 $EndComp
 $Comp
@@ -402,30 +279,12 @@ F 1 "0,2" V 4950 1700 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L R R2
-U 1 1 54214907
-P 4200 4750
-F 0 "R2" V 4280 4750 50  0000 C CNN
-F 1 "1.2" V 4200 4750 50  0000 C CNN
-	1    4200 4750
-	1    0    0    -1  
-$EndComp
-$Comp
 L R R1
 U 1 1 54214900
 P 4200 2300
 F 0 "R1" V 4280 2300 50  0000 C CNN
 F 1 "1.2" V 4200 2300 50  0000 C CNN
 	1    4200 2300
-	1    0    0    -1  
-$EndComp
-$Comp
-L MMBT2907A T2
-U 1 1 542148F7
-P 4600 4750
-F 0 "T2" H 4650 4400 60  0000 C CNN
-F 1 "MMBT2907A" H 4750 5050 60  0000 C CNN
-	1    4600 4750
 	1    0    0    -1  
 $EndComp
 $Comp

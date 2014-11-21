@@ -1,0 +1,54 @@
+# EESchema Netlist Version 1.1 created  ven. 21 nov. 2014 09:43:58 CET
+(
+ ( /5458E038 SM1206POL C1 10µF_63V
+  ( 1 N-000002 )
+  ( 2 GND )
+ )
+ ( /5458E03F SM1206POL C2 10µF_63V
+  ( 1 N-000003 )
+  ( 2 GND )
+ )
+ ( /5458E024 SM1206POL D1 1N4007
+  ( 1 N-000003 )
+  ( 2 N-000002 )
+ )
+ ( /5458DF9E Conn2Pin P1 CONN_2
+  ( 1 N-000002 )
+  ( 2 N-000002 )
+ )
+ ( /5458DFA2 Conn2Pin P2 CONN_2
+  ( 1 GND )
+  ( 2 GND )
+ )
+ ( /5458DFA8 Conn2Pin P3 CONN_2
+  ( 1 N-000003 )
+  ( 2 N-000003 )
+ )
+ ( /5458DFAC Conn2Pin P4 CONN_2
+  ( 1 GND )
+  ( 2 GND )
+ )
+ ( /546EF7B3 DPAK3 U1 LM1084
+  ( 1 GND )
+  ( 2 N-000003 )
+  ( 3 N-000002 )
+ )
+)
+*
+{ Allowed footprints by component:
+$component C1
+ SM*
+ C?
+ C1-1
+$endlist
+$component C2
+ SM*
+ C?
+ C1-1
+$endlist
+$component D1
+ D?
+ S*
+$endlist
+$endfootprintlist
+}

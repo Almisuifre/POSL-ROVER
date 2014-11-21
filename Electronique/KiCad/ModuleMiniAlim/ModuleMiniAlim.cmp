@@ -1,0 +1,59 @@
+Cmp-Mod V01 Created by CvPCB (2011-05-25)-stable date = ven. 21 nov. 2014 09:43:58 CET
+
+BeginCmp
+TimeStamp = /5458E038;
+Reference = C1;
+ValeurCmp = 10µF_63V;
+IdModule  = SM1206POL;
+EndCmp
+
+BeginCmp
+TimeStamp = /5458E03F;
+Reference = C2;
+ValeurCmp = 10µF_63V;
+IdModule  = SM1206POL;
+EndCmp
+
+BeginCmp
+TimeStamp = /5458E024;
+Reference = D1;
+ValeurCmp = 1N4007;
+IdModule  = SM1206POL;
+EndCmp
+
+BeginCmp
+TimeStamp = /5458DF9E;
+Reference = P1;
+ValeurCmp = CONN_2;
+IdModule  = Conn2Pin;
+EndCmp
+
+BeginCmp
+TimeStamp = /5458DFA2;
+Reference = P2;
+ValeurCmp = CONN_2;
+IdModule  = Conn2Pin;
+EndCmp
+
+BeginCmp
+TimeStamp = /5458DFA8;
+Reference = P3;
+ValeurCmp = CONN_2;
+IdModule  = Conn2Pin;
+EndCmp
+
+BeginCmp
+TimeStamp = /5458DFAC;
+Reference = P4;
+ValeurCmp = CONN_2;
+IdModule  = Conn2Pin;
+EndCmp
+
+BeginCmp
+TimeStamp = /546EF7B3;
+Reference = U1;
+ValeurCmp = LM1084;
+IdModule  = DPAK3;
+EndCmp
+
+EndListe

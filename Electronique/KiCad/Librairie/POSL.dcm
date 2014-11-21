@@ -1,8 +1,13 @@
-EESchema-DOCLIB  Version 2.0  Date: lun. 29 sept. 2014 13:17:01 CEST
+EESchema-DOCLIB  Version 2.0  Date: ven. 21 nov. 2014 09:27:48 CET
 #
 $CMP L4940V85
 D L4940
 K L4940
+$ENDCMP
+#
+$CMP LM1084
+D LM1084
+K LM1084
 $ENDCMP
 #
 $CMP MMBT2907A
