@@ -14,7 +14,7 @@ LISCENCES (REDISTRIBUTION)
 
 -En d'autres termes, tant que c'est dans un cadre privé, dans un milieu associatif, vous pouvez reprendre le projet et déveloper autour.
 
--En revanche, cela ne dispense pas de citer la source avec un petit lien vers le Github.
+-En revanche, cela ne dispense pas de citiez la source avec un petit lien vers le Github.
 
 -----------------------------------------------------
 
