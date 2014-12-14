@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPCB (2011-05-25)-stable date = sam. 27 sept. 2014 13:00:19 CEST
+Cmp-Mod V01 Created by CvPCB (2011-05-25)-stable date = dim. 14 déc. 2014 22:30:40 CET
 
 BeginCmp
 TimeStamp = /54266710;
@@ -22,22 +22,8 @@ IdModule  = SM1206POL2;
 EndCmp
 
 BeginCmp
-TimeStamp = /5421497E;
-Reference = C4;
-ValeurCmp = CAPAPOL;
-IdModule  = SM1206POL2;
-EndCmp
-
-BeginCmp
 TimeStamp = /5421497B;
 Reference = C5;
-ValeurCmp = CAPAPOL;
-IdModule  = SM1206POL2;
-EndCmp
-
-BeginCmp
-TimeStamp = /54214981;
-Reference = C6;
 ValeurCmp = CAPAPOL;
 IdModule  = SM1206POL2;
 EndCmp
@@ -46,7 +32,7 @@ BeginCmp
 TimeStamp = /542148C0;
 Reference = P1;
 ValeurCmp = CONN_2;
-IdModule  = Connecteur-CI;
+IdModule  = bornier2;
 EndCmp
 
 BeginCmp
@@ -64,15 +50,43 @@ IdModule  = bornier2;
 EndCmp
 
 BeginCmp
-TimeStamp = /54214900;
-Reference = R1;
-ValeurCmp = 1.2;
-IdModule  = R-CMS-1;
+TimeStamp = /548DFE1A;
+Reference = P4;
+ValeurCmp = CONN_2;
+IdModule  = Conn2Pin;
 EndCmp
 
 BeginCmp
-TimeStamp = /54214907;
-Reference = R2;
+TimeStamp = /548DFE1E;
+Reference = P5;
+ValeurCmp = CONN_2;
+IdModule  = Conn2Pin;
+EndCmp
+
+BeginCmp
+TimeStamp = /548DFE22;
+Reference = P6;
+ValeurCmp = CONN_2;
+IdModule  = Conn2Pin;
+EndCmp
+
+BeginCmp
+TimeStamp = /548DFE26;
+Reference = P7;
+ValeurCmp = CONN_2;
+IdModule  = Conn2Pin;
+EndCmp
+
+BeginCmp
+TimeStamp = /548DFEDA;
+Reference = P8;
+ValeurCmp = CONN_2;
+IdModule  = bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /54214900;
+Reference = R1;
 ValeurCmp = 1.2;
 IdModule  = R-CMS-1;
 EndCmp
@@ -85,22 +99,8 @@ IdModule  = R-CMS-2;
 EndCmp
 
 BeginCmp
-TimeStamp = /54214917;
-Reference = R4;
-ValeurCmp = 0.2;
-IdModule  = R-CMS-2;
-EndCmp
-
-BeginCmp
 TimeStamp = /54214989;
 Reference = REG1;
-ValeurCmp = L4940V85;
-IdModule  = T0220-CMS-Rad;
-EndCmp
-
-BeginCmp
-TimeStamp = /5421499A;
-Reference = REG2;
 ValeurCmp = L4940V85;
 IdModule  = T0220-CMS-Rad;
 EndCmp
@@ -113,22 +113,8 @@ IdModule  = SOT23BEC;
 EndCmp
 
 BeginCmp
-TimeStamp = /542148F7;
-Reference = T2;
-ValeurCmp = MMBT2907A;
-IdModule  = SOT23BEC;
-EndCmp
-
-BeginCmp
 TimeStamp = /54214931;
 Reference = T3;
-ValeurCmp = NJVMJD44H11;
-IdModule  = DPAK2;
-EndCmp
-
-BeginCmp
-TimeStamp = /54214937;
-Reference = T4;
 ValeurCmp = NJVMJD44H11;
 IdModule  = DPAK2;
 EndCmp

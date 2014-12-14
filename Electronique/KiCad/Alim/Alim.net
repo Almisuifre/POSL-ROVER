@@ -1,86 +1,75 @@
-# EESchema Netlist Version 1.1 created  sam. 27 sept. 2014 13:00:19 CEST
+# EESchema Netlist Version 1.1 created  dim. 14 déc. 2014 22:30:40 CET
 (
  ( /54266710 CPOL-G-CMS C1 2200µF/63V
-  ( 1 N-000002 )
+  ( 1 N-000003 )
   ( 2 GND )
  )
  ( /542148DF CPOL-G-CMS C2 2200µF/63V
-  ( 1 N-000002 )
+  ( 1 N-000003 )
   ( 2 GND )
  )
  ( /54214975 SM1206POL2 C3 CAPAPOL
-  ( 1 N-000008 )
-  ( 2 GND )
- )
- ( /5421497E SM1206POL2 C4 CAPAPOL
-  ( 1 N-000004 )
+  ( 1 N-000006 )
   ( 2 GND )
  )
  ( /5421497B SM1206POL2 C5 CAPAPOL
   ( 1 N-000005 )
   ( 2 GND )
  )
- ( /54214981 SM1206POL2 C6 CAPAPOL
-  ( 1 N-000006 )
-  ( 2 GND )
- )
- ( /542148C0 Connecteur-CI P1 CONN_2
+ ( /542148C0 bornier2 P1 CONN_2
   ( 1 GND )
-  ( 2 N-000002 )
+  ( 2 N-000003 )
  )
  ( /542149BC bornier2 P2 CONN_2
   ( 1 GND )
-  ( 2 N-000006 )
+  ( 2 N-000004 )
  )
  ( /542149B3 bornier2 P3 CONN_2
   ( 1 GND )
   ( 2 N-000005 )
  )
- ( /54214900 R-CMS-1 R1 1.2
-  ( 1 N-000002 )
-  ( 2 N-000008 )
+ ( /548DFE1A Conn2Pin P4 CONN_2
+  ( 1 N-000003 )
+  ( 2 N-000003 )
  )
- ( /54214907 R-CMS-1 R2 1.2
-  ( 1 N-000002 )
+ ( /548DFE1E Conn2Pin P5 CONN_2
+  ( 1 GND )
+  ( 2 GND )
+ )
+ ( /548DFE22 Conn2Pin P6 CONN_2
+  ( 1 N-000004 )
   ( 2 N-000004 )
  )
- ( /5421490C R-CMS-2 R3 0,2
-  ( 1 N-000003 )
-  ( 2 N-000002 )
+ ( /548DFE26 Conn2Pin P7 CONN_2
+  ( 1 GND )
+  ( 2 GND )
  )
- ( /54214917 R-CMS-2 R4 0.2
-  ( 1 N-000007 )
-  ( 2 N-000002 )
+ ( /548DFEDA bornier2 P8 CONN_2
+  ( 1 GND )
+  ( 2 N-000003 )
+ )
+ ( /54214900 R-CMS-1 R1 1.2
+  ( 1 N-000003 )
+  ( 2 N-000006 )
+ )
+ ( /5421490C R-CMS-2 R3 0,2
+  ( 1 N-000002 )
+  ( 2 N-000003 )
  )
  ( /54214989 T0220-CMS-Rad REG1 L4940V85
-  ( 1 N-000008 )
+  ( 1 N-000006 )
   ( 2 GND )
   ( 3 N-000005 )
- )
- ( /5421499A T0220-CMS-Rad REG2 L4940V85
-  ( 1 N-000004 )
-  ( 2 GND )
-  ( 3 N-000006 )
  )
  ( /542148EE SOT23BEC T1 MMBT2907A
-  ( 1 N-000003 )
-  ( 2 N-000002 )
-  ( 3 N-000008 )
- )
- ( /542148F7 SOT23BEC T2 MMBT2907A
-  ( 1 N-000007 )
-  ( 2 N-000002 )
-  ( 3 N-000004 )
+  ( 1 N-000002 )
+  ( 2 N-000003 )
+  ( 3 N-000006 )
  )
  ( /54214931 DPAK2 T3 NJVMJD44H11
-  ( 1 N-000008 )
-  ( 2 N-000003 )
+  ( 1 N-000006 )
+  ( 2 N-000002 )
   ( 3 N-000005 )
- )
- ( /54214937 DPAK2 T4 NJVMJD44H11
-  ( 1 N-000004 )
-  ( 2 N-000007 )
-  ( 3 N-000006 )
  )
 )
 *
@@ -97,15 +86,7 @@ $component C3
  CP*
  SM*
 $endlist
-$component C4
- CP*
- SM*
-$endlist
 $component C5
- CP*
- SM*
-$endlist
-$component C6
  CP*
  SM*
 $endlist
@@ -115,19 +96,7 @@ $component R1
  SM0805
  R?-*
 $endlist
-$component R2
- R?
- SM0603
- SM0805
- R?-*
-$endlist
 $component R3
- R?
- SM0603
- SM0805
- R?-*
-$endlist
-$component R4
  R?
  SM0603
  SM0805
