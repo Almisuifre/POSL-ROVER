@@ -2,7 +2,7 @@ POSL
 
 INFORMATIONS GENERALES
 -----------------------------------------------------
--POSL est l'acronyme de Projet Open Source est Libre.
+-POSL est l'acronyme de Projet Open Source et Libre.
 
 -L'ensemble du projet repose entièrement sur des logiciels Open Source et son hébergement est sous GitHub.
 
