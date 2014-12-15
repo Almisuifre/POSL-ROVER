@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date lun. 15 déc. 2014 09:16:07 CET
+EESchema Schematic File Version 2  date lun. 15 déc. 2014 23:51:44 CET
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -391,7 +391,7 @@ L CAPAPOL C5
 U 1 1 5421497B
 P 7900 2900
 F 0 "C5" H 7950 3000 50  0000 L CNN
-F 1 "CAPAPOL" H 7950 2800 50  0000 L CNN
+F 1 "1µF" H 7950 2800 50  0000 L CNN
 	1    7900 2900
 	1    0    0    -1  
 $EndComp
@@ -400,7 +400,7 @@ L CAPAPOL C3
 U 1 1 54214975
 P 6800 2900
 F 0 "C3" H 6850 3000 50  0000 L CNN
-F 1 "CAPAPOL" H 6850 2800 50  0000 L CNN
+F 1 "1µF" H 6850 2800 50  0000 L CNN
 	1    6800 2900
 	1    0    0    -1  
 $EndComp
