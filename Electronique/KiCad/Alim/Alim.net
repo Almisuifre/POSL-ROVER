@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  dim. 14 déc. 2014 22:30:40 CET
+# EESchema Netlist Version 1.1 created  lun. 15 déc. 2014 09:37:31 CET
 (
  ( /54266710 CPOL-G-CMS C1 2200µF/63V
   ( 1 N-000003 )
@@ -16,15 +16,15 @@
   ( 1 N-000005 )
   ( 2 GND )
  )
- ( /542148C0 bornier2 P1 CONN_2
+ ( /542148C0 Connecteur-CI P1 CONN_2
   ( 1 GND )
   ( 2 N-000003 )
  )
- ( /542149BC bornier2 P2 CONN_2
+ ( /542149BC Connecteur-CI P2 CONN_2
   ( 1 GND )
   ( 2 N-000004 )
  )
- ( /542149B3 bornier2 P3 CONN_2
+ ( /542149B3 Connecteur-CI P3 CONN_2
   ( 1 GND )
   ( 2 N-000005 )
  )
@@ -44,7 +44,7 @@
   ( 1 GND )
   ( 2 GND )
  )
- ( /548DFEDA bornier2 P8 CONN_2
+ ( /548DFEDA Connecteur-CI P8 CONN_2
   ( 1 GND )
   ( 2 N-000003 )
  )

@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date dim. 14 déc. 2014 23:07:17 CET
+EESchema Schematic File Version 2  date lun. 15 déc. 2014 09:16:07 CET
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -37,7 +37,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 1
 Title ""
-Date "14 dec 2014"
+Date "15 dec 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -285,7 +285,7 @@ $EndComp
 Text Notes 950  2450 0    60   ~ 0
 0.2 = R200\n1.2 = 1R2
 Text Notes 9200 4150 0    60   ~ 0
-+6V
++5V
 Text Notes 9250 3950 0    60   ~ 0
 0V
 Text Notes 9300 1550 0    60   ~ 0
