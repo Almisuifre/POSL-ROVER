@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPCB (2011-05-25)-stable date = lun. 15 déc. 2014 09:37:31 CET
+Cmp-Mod V01 Created by CvPCB (2011-05-25)-stable date = mar. 06 janv. 2015 19:48:37 CET
 
 BeginCmp
 TimeStamp = /54266710;
@@ -17,14 +17,14 @@ EndCmp
 BeginCmp
 TimeStamp = /54214975;
 Reference = C3;
-ValeurCmp = CAPAPOL;
+ValeurCmp = 1µF;
 IdModule  = SM1206POL2;
 EndCmp
 
 BeginCmp
 TimeStamp = /5421497B;
 Reference = C5;
-ValeurCmp = CAPAPOL;
+ValeurCmp = 1µF;
 IdModule  = SM1206POL2;
 EndCmp
 
@@ -113,9 +113,9 @@ IdModule  = SOT23BEC;
 EndCmp
 
 BeginCmp
-TimeStamp = /54214931;
-Reference = T3;
-ValeurCmp = NJVMJD44H11;
+TimeStamp = /54AC2BB2;
+Reference = T2;
+ValeurCmp = MJD45H11G;
 IdModule  = DPAK2;
 EndCmp
 

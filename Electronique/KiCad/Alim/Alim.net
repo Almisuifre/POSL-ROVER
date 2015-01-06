@@ -1,24 +1,24 @@
-# EESchema Netlist Version 1.1 created  lun. 15 déc. 2014 09:37:31 CET
+# EESchema Netlist Version 1.1 created  mar. 06 janv. 2015 19:48:37 CET
 (
  ( /54266710 CPOL-G-CMS C1 2200µF/63V
-  ( 1 N-000003 )
-  ( 2 GND )
- )
- ( /542148DF CPOL-G-CMS C2 2200µF/63V
-  ( 1 N-000003 )
-  ( 2 GND )
- )
- ( /54214975 SM1206POL2 C3 CAPAPOL
   ( 1 N-000006 )
   ( 2 GND )
  )
- ( /5421497B SM1206POL2 C5 CAPAPOL
-  ( 1 N-000005 )
+ ( /542148DF CPOL-G-CMS C2 2200µF/63V
+  ( 1 N-000006 )
+  ( 2 GND )
+ )
+ ( /54214975 SM1206POL2 C3 1µF
+  ( 1 N-000002 )
+  ( 2 GND )
+ )
+ ( /5421497B SM1206POL2 C5 1µF
+  ( 1 N-000001 )
   ( 2 GND )
  )
  ( /542148C0 Connecteur-CI P1 CONN_2
   ( 1 GND )
-  ( 2 N-000003 )
+  ( 2 N-000006 )
  )
  ( /542149BC Connecteur-CI P2 CONN_2
   ( 1 GND )
@@ -26,19 +26,19 @@
  )
  ( /542149B3 Connecteur-CI P3 CONN_2
   ( 1 GND )
-  ( 2 N-000005 )
+  ( 2 N-000001 )
  )
  ( /548DFE1A Conn2Pin P4 CONN_2
-  ( 1 N-000003 )
-  ( 2 N-000003 )
+  ( 1 N-000006 )
+  ( 2 N-000006 )
  )
  ( /548DFE1E Conn2Pin P5 CONN_2
-  ( 1 GND )
-  ( 2 GND )
- )
- ( /548DFE22 Conn2Pin P6 CONN_2
   ( 1 N-000004 )
   ( 2 N-000004 )
+ )
+ ( /548DFE22 Conn2Pin P6 CONN_2
+  ( 1 GND )
+  ( 2 GND )
  )
  ( /548DFE26 Conn2Pin P7 CONN_2
   ( 1 GND )
@@ -46,29 +46,29 @@
  )
  ( /548DFEDA Connecteur-CI P8 CONN_2
   ( 1 GND )
-  ( 2 N-000003 )
- )
- ( /54214900 R-CMS-1 R1 1.2
-  ( 1 N-000003 )
   ( 2 N-000006 )
  )
- ( /5421490C R-CMS-2 R3 0,2
-  ( 1 N-000002 )
-  ( 2 N-000003 )
- )
- ( /54214989 T0220-CMS-Rad REG1 L4940V85
-  ( 1 N-000006 )
-  ( 2 GND )
-  ( 3 N-000005 )
- )
- ( /542148EE SOT23BEC T1 MMBT2907A
-  ( 1 N-000002 )
-  ( 2 N-000003 )
-  ( 3 N-000006 )
- )
- ( /54214931 DPAK2 T3 NJVMJD44H11
+ ( /54214900 R-CMS-1 R1 1.2
   ( 1 N-000006 )
   ( 2 N-000002 )
+ )
+ ( /5421490C R-CMS-2 R3 0,2
+  ( 1 N-000005 )
+  ( 2 N-000006 )
+ )
+ ( /54214989 T0220-CMS-Rad REG1 L4940V85
+  ( 1 N-000002 )
+  ( 2 GND )
+  ( 3 N-000001 )
+ )
+ ( /542148EE SOT23BEC T1 MMBT2907A
+  ( 1 N-000005 )
+  ( 2 N-000006 )
+  ( 3 N-000002 )
+ )
+ ( /54AC2BB2 DPAK2 T2 MJD45H11G
+  ( 1 N-000002 )
+  ( 2 N-000001 )
   ( 3 N-000005 )
  )
 )
