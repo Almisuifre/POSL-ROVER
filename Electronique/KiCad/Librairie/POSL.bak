@@ -1,4 +1,4 @@
-EESchema-LIBRARY Version 2.3  Date: sam. 22 nov. 2014 08:58:57 CET
+EESchema-LIBRARY Version 2.3  Date: sam. 22 nov. 2014 09:00:43 CET
 #encoding utf-8
 #
 # L4940V85
@@ -89,9 +89,9 @@ P 3 0 1 0  0 0  0 -300  -150 -300 N
 P 3 0 1 0  0 400  350 400  350 50 N
 P 4 0 1 0  0 -300  0 -450  350 -450  350 -50 N
 P 4 0 1 0  350 50  300 -50  400 -50  350 50 N
-X G 1 -650 -300 300 R 50 50 1 1 I
-X D 2 0 800 300 D 50 50 1 1 I
-X S 3 0 -750 300 U 50 50 1 1 I
+X D D 0 800 300 D 50 50 1 1 I
+X G G -650 -300 300 R 50 50 1 1 I
+X S S 0 -750 300 U 50 50 1 1 I
 ENDDRAW
 ENDDEF
 #
