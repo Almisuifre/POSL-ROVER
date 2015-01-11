@@ -1,0 +1,183 @@
+# EESchema Netlist Version 1.1 created  dim. 11 janv. 2015 12:19:53 CET
+(
+ ( /54B24F81 CC12CC C1 100nF
+  ( 1 N-000003 )
+  ( 2 GND )
+ )
+ ( /542148DF CPOL-G-CMS C2 4700µF/25V
+  ( 1 N-000010 )
+  ( 2 GND )
+ )
+ ( /54B24F99 CC12CC C3 100nF
+  ( 1 N-000001 )
+  ( 2 GND )
+ )
+ ( /54B24F84 CC12CC C4 100nF
+  ( 1 N-000009 )
+  ( 2 GND )
+ )
+ ( /54B24FA2 CC12CC C5 100nF
+  ( 1 N-000004 )
+  ( 2 GND )
+ )
+ ( /54B25065 LED-0603 D1 LED
+  ( 1 N-000005 )
+  ( 2 GND )
+ )
+ ( /54B25056 LED-0603 D2 LED
+  ( 1 N-000006 )
+  ( 2 GND )
+ )
+ ( /542148C0 Connecteur-CI P1 CONN_2
+  ( 1 N-000010 )
+  ( 2 GND )
+ )
+ ( /542149BC Connecteur-CI P2 CONN_2
+  ( 1 N-000004 )
+  ( 2 GND )
+ )
+ ( /542149B3 Connecteur-CI P3 CONN_2
+  ( 1 N-000009 )
+  ( 2 GND )
+ )
+ ( /548DFEDA Connecteur-CI P8 CONN_2
+  ( 1 N-000010 )
+  ( 2 GND )
+ )
+ ( /54214900 R-CMS-1 R1 1.2
+  ( 1 N-000010 )
+  ( 2 N-000003 )
+ )
+ ( /54B24F08 R-CMS-1 R2 1.2
+  ( 1 N-000009 )
+  ( 2 N-000001 )
+ )
+ ( /5421490C R-CMS-2 R3 0,2
+  ( 1 N-000007 )
+  ( 2 N-000010 )
+ )
+ ( /54B24F22 R-CMS-2 R4 0.2
+  ( 1 N-000008 )
+  ( 2 N-000009 )
+ )
+ ( /54B2507C SM0603 R5 140
+  ( 1 N-000005 )
+  ( 2 N-000004 )
+ )
+ ( /54B25077 SM0603 R6 320
+  ( 1 N-000006 )
+  ( 2 N-000009 )
+ )
+ ( /54214989 T0220-CMS-Rad REG1 L4940V85
+  ( 1 N-000003 )
+  ( 2 GND )
+  ( 3 N-000009 )
+ )
+ ( /54B25B62 T0220-CMS-Rad REG2 7805CMS
+  ( 1 N-000001 )
+  ( 2 GND )
+  ( 3 N-000004 )
+ )
+ ( /542148EE SOT23BEC T1 MMBT2907A
+  ( 1 N-000007 )
+  ( 2 N-000010 )
+  ( 3 N-000003 )
+ )
+ ( /54AC2BB2 DPAK2 T2 MJD45H11G
+  ( 1 N-000003 )
+  ( 2 N-000009 )
+  ( 3 N-000007 )
+ )
+ ( /54B24F15 SOT23BEC T3 MMBT2907A
+  ( 1 N-000008 )
+  ( 2 N-000009 )
+  ( 3 N-000001 )
+ )
+ ( /54B24F3B DPAK2 T4 MJD45H11G
+  ( 1 N-000001 )
+  ( 2 N-000004 )
+  ( 3 N-000008 )
+ )
+)
+*
+{ Allowed footprints by component:
+$component C1
+ SM*
+ C?
+ C1-1
+$endlist
+$component C2
+ CP*
+ SM*
+$endlist
+$component C3
+ SM*
+ C?
+ C1-1
+$endlist
+$component C4
+ SM*
+ C?
+ C1-1
+$endlist
+$component C5
+ SM*
+ C?
+ C1-1
+$endlist
+$component D1
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$component D2
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$component R1
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component R2
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component R3
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component R4
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component R5
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component R6
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$endfootprintlist
+}

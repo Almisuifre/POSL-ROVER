@@ -1,0 +1,164 @@
+Cmp-Mod V01 Created by CvPCB (2011-05-25)-stable date = dim. 11 janv. 2015 12:19:53 CET
+
+BeginCmp
+TimeStamp = /54B24F81;
+Reference = C1;
+ValeurCmp = 100nF;
+IdModule  = CC12CC;
+EndCmp
+
+BeginCmp
+TimeStamp = /542148DF;
+Reference = C2;
+ValeurCmp = 4700µF/25V;
+IdModule  = CPOL-G-CMS;
+EndCmp
+
+BeginCmp
+TimeStamp = /54B24F99;
+Reference = C3;
+ValeurCmp = 100nF;
+IdModule  = CC12CC;
+EndCmp
+
+BeginCmp
+TimeStamp = /54B24F84;
+Reference = C4;
+ValeurCmp = 100nF;
+IdModule  = CC12CC;
+EndCmp
+
+BeginCmp
+TimeStamp = /54B24FA2;
+Reference = C5;
+ValeurCmp = 100nF;
+IdModule  = CC12CC;
+EndCmp
+
+BeginCmp
+TimeStamp = /54B25065;
+Reference = D1;
+ValeurCmp = LED;
+IdModule  = LED-0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /54B25056;
+Reference = D2;
+ValeurCmp = LED;
+IdModule  = LED-0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /542148C0;
+Reference = P1;
+ValeurCmp = CONN_2;
+IdModule  = Connecteur-CI;
+EndCmp
+
+BeginCmp
+TimeStamp = /542149BC;
+Reference = P2;
+ValeurCmp = CONN_2;
+IdModule  = Connecteur-CI;
+EndCmp
+
+BeginCmp
+TimeStamp = /542149B3;
+Reference = P3;
+ValeurCmp = CONN_2;
+IdModule  = Connecteur-CI;
+EndCmp
+
+BeginCmp
+TimeStamp = /548DFEDA;
+Reference = P8;
+ValeurCmp = CONN_2;
+IdModule  = Connecteur-CI;
+EndCmp
+
+BeginCmp
+TimeStamp = /54214900;
+Reference = R1;
+ValeurCmp = 1.2;
+IdModule  = R-CMS-1;
+EndCmp
+
+BeginCmp
+TimeStamp = /54B24F08;
+Reference = R2;
+ValeurCmp = 1.2;
+IdModule  = R-CMS-1;
+EndCmp
+
+BeginCmp
+TimeStamp = /5421490C;
+Reference = R3;
+ValeurCmp = 0,2;
+IdModule  = R-CMS-2;
+EndCmp
+
+BeginCmp
+TimeStamp = /54B24F22;
+Reference = R4;
+ValeurCmp = 0.2;
+IdModule  = R-CMS-2;
+EndCmp
+
+BeginCmp
+TimeStamp = /54B2507C;
+Reference = R5;
+ValeurCmp = 140;
+IdModule  = SM0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /54B25077;
+Reference = R6;
+ValeurCmp = 320;
+IdModule  = SM0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /54214989;
+Reference = REG1;
+ValeurCmp = L4940V85;
+IdModule  = T0220-CMS-Rad;
+EndCmp
+
+BeginCmp
+TimeStamp = /54B25B62;
+Reference = REG2;
+ValeurCmp = 7805CMS;
+IdModule  = T0220-CMS-Rad;
+EndCmp
+
+BeginCmp
+TimeStamp = /542148EE;
+Reference = T1;
+ValeurCmp = MMBT2907A;
+IdModule  = SOT23BEC;
+EndCmp
+
+BeginCmp
+TimeStamp = /54AC2BB2;
+Reference = T2;
+ValeurCmp = MJD45H11G;
+IdModule  = DPAK2;
+EndCmp
+
+BeginCmp
+TimeStamp = /54B24F15;
+Reference = T3;
+ValeurCmp = MMBT2907A;
+IdModule  = SOT23BEC;
+EndCmp
+
+BeginCmp
+TimeStamp = /54B24F3B;
+Reference = T4;
+ValeurCmp = MJD45H11G;
+IdModule  = DPAK2;
+EndCmp
+
+EndListe
