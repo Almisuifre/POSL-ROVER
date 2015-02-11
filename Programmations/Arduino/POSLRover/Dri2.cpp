@@ -21,10 +21,10 @@ void Dri2::Action(int dir, int vitesse) {
   analogWrite(_pin_pwm, vitesse);
   
   if(dir) {
-    digitalWrite(_pin_pole, LOW);
+    digitalWrite(_pin_pole, HIGH);
   }
   else {
-    digitalWrite(_pin_pole, HIGH);
+    digitalWrite(_pin_pole, LOW);
   }
 }
 
