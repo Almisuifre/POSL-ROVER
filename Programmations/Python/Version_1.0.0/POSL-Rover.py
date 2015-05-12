@@ -36,6 +36,8 @@ class iface1(tk.Frame):
         self.myImgTSPG = tk.PhotoImage(file="ressources/icones/tspg.gif")
         self.myImgRSP = tk.PhotoImage(file="ressources/icones/rsp.gif")
         self.myImgTSPD = tk.PhotoImage(file="ressources/icones/tspd.gif")
+        self.myImgCO = tk.PhotoImage(file="ressources/icones/co.gif")
+        self.myImgCMD = tk.PhotoImage(file="ressources/icones/cmd.gif")
         
         #Boutons
         self.btAV = tk.Button(self.interfaceDirect, image=self.myImgAV, bg = "grey", command=self.av)
@@ -45,17 +47,22 @@ class iface1(tk.Frame):
         self.btRDG = tk.Button(self.interfaceDirect, image=self.myImgRDG, bg = "grey", command=self.rdg)
         self.btRDD = tk.Button(self.interfaceDirect, image=self.myImgRDD, bg = "grey", command=self.rdd)
         self.btAR = tk.Button(self.interfaceDirect, image=self.myImgAR, bg = "grey", command=self.ar)
+        self.scaleDirAV = tk.Scale(self.interfaceDirect, from_=0, to=180, orient=tk.HORIZONTAL, resolution=5, tickinterval=2)
+        self.scaleDirAV.set(90)
+        self.scaleDirAR = tk.Scale(self.interfaceDirect, from_=180, to=0, orient=tk.HORIZONTAL, resolution=5, tickinterval=2)
+        self.scaleDirAR.set(90)
+        self.currentManDir = tk.Button(self.interfaceDirect, image=self.myImgCMD, bg = "grey", command=self.manDir)
         
         self.btTSPG = tk.Button(self.interfaceSurPlace, image=self.myImgTSPG, bg = "grey", command=self.tspg)
         self.btRSP = tk.Button(self.interfaceSurPlace, image=self.myImgRSP, bg = "grey", command=self.rsp)
         self.btTSPD = tk.Button(self.interfaceSurPlace, image=self.myImgTSPD, bg = "grey", command=self.tspd)
+        
+        self.scaleSpeed = tk.Scale(self.interfaceSpeed, from_=255, to=100, tickinterval=2)
 
-        self.scaleSpeed = tk.Scale(self.interfaceSpeed, from_=100, to=60, tickinterval=2)
-
-        self.btCo = tk.Button(self.interfaceConnexion, image=self.myImgTSPD, bg = "green", command=self.serialConn)
+        self.btCo = tk.Button(self.interfaceConnexion, image=self.myImgCO, bg = "green", command=self.serialConn)
 
         #Saisie de texte
-        self.textInfos = tk.Text(self.interfaceInfos, width=100, height=20, wrap=tk.WORD)
+        self.textInfos = tk.Text(self.interfaceInfos, width=50, height=20, wrap=tk.WORD)
         
         #Positionnement des boutons généraux
         self.interfaceDirect.grid(column=0, row=0, sticky='NS')
@@ -66,6 +73,9 @@ class iface1(tk.Frame):
         self.btRDG.grid(column=0, row=1)
         self.btRDD.grid(column=4, row=1)
         self.btAR.grid(column=2, row=2)
+        self.scaleDirAV.grid(column=0, row=3, columnspan=3)
+        self.scaleDirAR.grid(column=0, row=4, columnspan=3)
+        self.currentManDir.grid(column=4, row=3, rowspan=2)
 
         #Positionnement de la gestion de vitesse
         self.interfaceSpeed.grid(column=1, row=0, rowspan=2, sticky='NS')
@@ -85,7 +95,7 @@ class iface1(tk.Frame):
         self.interfaceConnexion.grid(column=1, row=2, sticky='NS')
         self.btCo.grid(column=0, row=0)
 
-        #self.serialConn()   #Lance la connection sur le mode serial
+        #self.serialConn()   #Lance la connection sur le mode serial en mode automatique
 
     #Avant
     def av(self):
@@ -105,6 +115,8 @@ class iface1(tk.Frame):
                 #avg / arg / avd / ard
                 #self.serialOrdre("!,2,70,110,70,110,*")
                 self.serialOrdre("!,2,70,110,75,105,*")
+                self.scaleDirAV.set(70)
+                self.scaleDirAR.set(110)
 
     #Roues Centres
     def rc(self):
@@ -113,6 +125,8 @@ class iface1(tk.Frame):
         #Si on a la connection lancé
         if self.serialConnection == 1:
             self.serialOrdre("!,2,90,90,90,90,*")
+            self.scaleDirAV.set(90)
+            self.scaleDirAR.set(90)
 
     #Roues Droites
     def rd(self):
@@ -122,6 +136,8 @@ class iface1(tk.Frame):
             if self.serialConnection == 1:
                 #self.serialOrdre("!,2,110,70,110,70,*")
                 self.serialOrdre("!,2,105,75,110,70,*")
+                self.scaleDirAV.set(110)
+                self.scaleDirAR.set(70)
 
     #Roues Diagonales Gauches
     def rdg(self):
@@ -130,6 +146,8 @@ class iface1(tk.Frame):
             #Si on a la connection lancé
             if self.serialConnection == 1:
                 self.serialOrdre("!,2,70,70,70,70,*")
+                self.scaleDirAV.set(70)
+                self.scaleDirAR.set(70)
 
     #Roues Diagolanes Droites
     def rdd(self):
@@ -138,6 +156,8 @@ class iface1(tk.Frame):
             #Si on a la connection lancé
             if self.serialConnection == 1:
                 self.serialOrdre("!,2,110,110,110,110,*")
+                self.scaleDirAV.set(110)
+                self.scaleDirAR.set(110)
 
     #Arrières
     def ar(self):
@@ -148,6 +168,68 @@ class iface1(tk.Frame):
             if self.serialConnection == 1:
                 self.serialOrdre("!,1,0," + str(speed) + ",0," + str(speed) + ",0," + str(speed) + ",0," + str(speed) + ",*")
 
+    #Mise à jour de la direction manuelle
+    def manDir(self):
+        #Si on utilise l'interface 1 
+        if self.currentInterface == 1:
+            #Si on a la connection lancé
+            if self.serialConnection == 1:
+                dirAV = self.scaleDirAV.get() #Mise à jour manuelle de la direction AV
+                dirAR = self.scaleDirAR.get() #Mise à jour manuelle de la direction AR
+
+                dirAVG = dirAV
+                dirARG = dirAR
+                dirAVD = dirAV
+                dirARD = dirAR
+
+                #Avant gauche
+                if dirAV < 85:
+                    dirAVG = dirAV
+                    dirAVD = dirAV+5
+                    
+                if dirAV < 5:
+                    dirAVG = dirAV
+                    dirAVD = dirAV 
+
+                #Avant droite
+                if dirAV > 100:
+                    dirAVG = dirAV+5
+                    dirAVD = dirAV
+
+                if dirAV > 175:
+                    dirAVG = dirAV
+                    dirAVD = dirAV
+
+                #Arrière gauche
+                if dirAR < 85:
+                    dirARG = dirAR-5
+                    dirARD = dirAR
+
+                if dirAR < 5:
+                    dirARG = dirAR
+                    dirARD = dirAR
+
+                #Arrière droite
+                if dirAR > 100:
+                    dirARG = dirAR
+                    dirARD = dirAR-5
+
+                if dirAR > 175:
+                    dirARG = dirAR
+                    dirARD = dirAR
+                
+                #gauche
+                #self.serialOrdre("!,2,70,110,70,110,*")
+                #self.serialOrdre("!,2,70,110,75,105,*")
+
+                #droite
+                #self.serialOrdre("!,2,110,70,110,70,*")
+                #self.serialOrdre("!,2,105,75,110,70,*")
+                
+                
+                #avg / arg / avd / ard
+                self.serialOrdre("!,2," + str(dirAVG) + "," + str(dirARG) +"," + str(dirAVD) + "," + str(dirARD) + ",*")
+    
     #Tourner Sur Place Gauche
     def tspg(self):
         speed = self.scaleSpeed.get() #Mise à jour de la vitesse
@@ -201,6 +283,7 @@ class iface1(tk.Frame):
             self.btRDG.configure(bg = "green")
             self.btRDD.configure(bg = "green")
             self.btAR.configure(bg = "green")
+            self.currentManDir.configure(bg = "green")
             self.btTSPG.configure(bg = "red")
             self.btRSP.configure(bg = "blue")
             self.btTSPD.configure(bg = "red")
@@ -218,13 +301,14 @@ class iface1(tk.Frame):
             self.btRDG.configure(bg = "red")
             self.btRDD.configure(bg = "red")
             self.btAR.configure(bg = "red")
+            self.currentManDir.configure(bg = "red")
             self.btTSPG.configure(bg = "green")
             self.btRSP.configure(bg = "grey")
             self.btTSPD.configure(bg = "green")
             #Pour se rappeler dans quelle interface on est
             self.currentInterface = 2
 
-    #Etablire une connexion
+    #Etablir une connexion
     def serialConn(self):
         #Tentative de connexion au XBee Usb
         for device in self.locations:
