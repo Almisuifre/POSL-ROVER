@@ -33,6 +33,7 @@ class iface1(tk.Frame):
         self.myImgRDG = tk.PhotoImage(file="ressources/icones/rdg.gif")
         self.myImgRDD = tk.PhotoImage(file="ressources/icones/rdd.gif")
         self.myImgAR = tk.PhotoImage(file="ressources/icones/ar.gif")
+        self.myImgRT = tk.PhotoImage(file="ressources/icones/rt.gif")
         self.myImgTSPG = tk.PhotoImage(file="ressources/icones/tspg.gif")
         self.myImgRSP = tk.PhotoImage(file="ressources/icones/rsp.gif")
         self.myImgTSPD = tk.PhotoImage(file="ressources/icones/tspd.gif")
@@ -47,6 +48,7 @@ class iface1(tk.Frame):
         self.btRDG = tk.Button(self.interfaceDirect, image=self.myImgRDG, bg = "grey", command=self.rdg)
         self.btRDD = tk.Button(self.interfaceDirect, image=self.myImgRDD, bg = "grey", command=self.rdd)
         self.btAR = tk.Button(self.interfaceDirect, image=self.myImgAR, bg = "grey", command=self.ar)
+        self.btRT = tk.Button(self.interfaceDirect, image=self.myImgRT, bg = "grey", command=self.rt)
         self.scaleDirAV = tk.Scale(self.interfaceDirect, from_=0, to=180, orient=tk.HORIZONTAL, resolution=5, tickinterval=2)
         self.scaleDirAV.set(90)
         self.scaleDirAR = tk.Scale(self.interfaceDirect, from_=180, to=0, orient=tk.HORIZONTAL, resolution=5, tickinterval=2)
@@ -73,9 +75,10 @@ class iface1(tk.Frame):
         self.btRDG.grid(column=0, row=1)
         self.btRDD.grid(column=4, row=1)
         self.btAR.grid(column=2, row=2)
-        self.scaleDirAV.grid(column=0, row=3, columnspan=3)
-        self.scaleDirAR.grid(column=0, row=4, columnspan=3)
-        self.currentManDir.grid(column=4, row=3, rowspan=2)
+        self.btRT.grid(column=0, row=3)
+        self.scaleDirAV.grid(column=0, row=4, columnspan=5)
+        self.scaleDirAR.grid(column=0, row=5, columnspan=5)
+        self.currentManDir.grid(column=5, row=5, rowspan=2, columnspan=5)
 
         #Positionnement de la gestion de vitesse
         self.interfaceSpeed.grid(column=1, row=0, rowspan=2, sticky='NS')
@@ -167,6 +170,16 @@ class iface1(tk.Frame):
             #Si on a la connection lancé
             if self.serialConnection == 1:
                 self.serialOrdre("!,1,0," + str(speed) + ",0," + str(speed) + ",0," + str(speed) + ",0," + str(speed) + ",*")
+
+    #Roues Transbordeur
+    def rt(self):
+        #Si on utilise l'interface 1 
+        if self.currentInterface == 1:
+            #Si on a la connection lancé
+            if self.serialConnection == 1:
+                self.serialOrdre("!,2,0,10,10,5,*")
+                self.scaleDirAV.set(110)
+                self.scaleDirAR.set(110)
 
     #Mise à jour de la direction manuelle
     def manDir(self):
@@ -283,6 +296,7 @@ class iface1(tk.Frame):
             self.btRDG.configure(bg = "green")
             self.btRDD.configure(bg = "green")
             self.btAR.configure(bg = "green")
+            self.btRT.configure(bg = "green")
             self.currentManDir.configure(bg = "green")
             self.btTSPG.configure(bg = "red")
             self.btRSP.configure(bg = "blue")
@@ -301,6 +315,7 @@ class iface1(tk.Frame):
             self.btRDG.configure(bg = "red")
             self.btRDD.configure(bg = "red")
             self.btAR.configure(bg = "red")
+            self.btRT.configure(bg = "red")
             self.currentManDir.configure(bg = "red")
             self.btTSPG.configure(bg = "green")
             self.btRSP.configure(bg = "grey")
