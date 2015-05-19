@@ -121,20 +121,23 @@ class iface1(tk.Frame):
 
     #Roues Gauches
     def rg(self):
-        #Si on utilise l'interface 1 
-        if self.currentInterface == 1:
-            #Si on a la connection lancé
-            if self.serialConnection == 1:
-                #avg / arg / avd / ard
-                #self.serialOrdre("!,2,70,110,70,110,*")
-                self.serialOrdre("!,2,70,110,75,105,*")
-                self.scaleDirAV.set(70)
-                self.scaleDirAR.set(110)
+        #Peut importe l'interface
+
+        #Active les boutons standards
+        self.btnStandard()
+        
+        #Si on a la connection lancé
+        if self.serialConnection == 1:
+            #avg / arg / avd / ard
+            self.serialOrdre("!,2,70,110,75,105,*")
+            self.scaleDirAV.set(70)
+            self.scaleDirAR.set(110)
 
     #Roues Centres
     def rc(self):
         #Active les boutons standards
         self.btnStandard()
+        
         #Si on a la connection lancé
         if self.serialConnection == 1:
             self.serialOrdre("!,2,90,90,90,90,*")
@@ -143,34 +146,43 @@ class iface1(tk.Frame):
 
     #Roues Droites
     def rd(self):
-        #Si on utilise l'interface 1 
-        if self.currentInterface == 1:
-            #Si on a la connection lancé
-            if self.serialConnection == 1:
-                #self.serialOrdre("!,2,110,70,110,70,*")
-                self.serialOrdre("!,2,105,75,110,70,*")
-                self.scaleDirAV.set(110)
-                self.scaleDirAR.set(70)
+        #Peut importe l'interface
+
+        #Active les boutons standards
+        self.btnStandard()
+
+        #Si on a la connection lancé
+        if self.serialConnection == 1:
+            #self.serialOrdre("!,2,110,70,110,70,*")
+            self.serialOrdre("!,2,105,75,110,70,*")
+            self.scaleDirAV.set(110)
+            self.scaleDirAR.set(70)
 
     #Roues Diagonales Gauches
     def rdg(self):
-        #Si on utilise l'interface 1 
-        if self.currentInterface == 1:
-            #Si on a la connection lancé
-            if self.serialConnection == 1:
-                self.serialOrdre("!,2,70,70,70,70,*")
-                self.scaleDirAV.set(70)
-                self.scaleDirAR.set(70)
+        #Peut importe l'interface
+
+        #Active les boutons standards
+        self.btnStandard()
+
+        #Si on a la connection lancé
+        if self.serialConnection == 1:
+            self.serialOrdre("!,2,70,70,70,70,*")
+            self.scaleDirAV.set(70)
+            self.scaleDirAR.set(70)
 
     #Roues Diagolanes Droites
     def rdd(self):
-        #Si on utilise l'interface 1 
-        if self.currentInterface == 1:
-            #Si on a la connection lancé
-            if self.serialConnection == 1:
-                self.serialOrdre("!,2,110,110,110,110,*")
-                self.scaleDirAV.set(110)
-                self.scaleDirAR.set(110)
+        #Peut importe l'interface
+
+        #Active les boutons standards
+        self.btnStandard()
+        
+        #Si on a la connection lancé
+        if self.serialConnection == 1:
+            self.serialOrdre("!,2,110,110,110,110,*")
+            self.scaleDirAV.set(110)
+            self.scaleDirAR.set(110)
 
     #Arrières
     def ar(self):
@@ -183,13 +195,16 @@ class iface1(tk.Frame):
 
     #Roues Transbordeur
     def rt(self):
-        #Si on utilise l'interface 1 
-        if self.currentInterface == 1:
-            #Si on a la connection lancé
-            if self.serialConnection == 1:
-                self.serialOrdre("!,2,0,10,10,5,*")
-                self.scaleDirAV.set(110)
-                self.scaleDirAR.set(110)
+        #Peut importe l'interface
+
+        #Active les boutons standards
+        self.btnStandard()
+
+        #Si on a la connection lancé
+        if self.serialConnection == 1:
+            self.serialOrdre("!,2,0,10,10,5,*")
+            self.scaleDirAV.set(110)
+            self.scaleDirAR.set(110)
 
     #Mise à jour de la direction manuelle
     def manDir(self):
@@ -326,13 +341,13 @@ class iface1(tk.Frame):
         #Si on a la connection lancé
         if self.serialConnection == 1:
             self.btAV.configure(bg = "red")
-            self.btRG.configure(bg = "red")
+            self.btRG.configure(bg = "green")
             self.btRC.configure(bg = "blue")
-            self.btRD.configure(bg = "red")
-            self.btRDG.configure(bg = "red")
-            self.btRDD.configure(bg = "red")
+            self.btRD.configure(bg = "green")
+            self.btRDG.configure(bg = "green")
+            self.btRDD.configure(bg = "green")
             self.btAR.configure(bg = "red")
-            self.btRT.configure(bg = "red")
+            self.btRT.configure(bg = "green")
             self.currentManDir.configure(bg = "red")
             self.btTSPG.configure(bg = "green")
             self.btRSP.configure(bg = "grey")
