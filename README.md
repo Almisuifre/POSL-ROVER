@@ -8,13 +8,12 @@ INFORMATIONS GENERALES
 
 -----------------------------------------------------
 
-LISCENCES (REDISTRIBUTION)
+LICENCE
 -----------------------------------------------------
--Le projet POSL et ses dérivatifs (les outils par exemples) sont soumis à une règle simple. Vous avez le droit de parler du projet, de reprendre tout ou partie du projet à condition que son utilsation ne soit pas commerciale et que vous en citez la source.
+POSL Rover de Almisuifre est mis à disposition selon les termes de la licence Creative Commons Attribution - Partage dans les Mêmes Conditions 4.0 International.
+Fondé(e) sur une œuvre à https://github.com/Almisuifre/POSL-ROVER.
 
--En d'autres termes, tant que c'est dans un cadre privé, dans un milieu associatif, vous pouvez reprendre le projet et déveloper autour.
-
--En revanche, cela ne dispense pas de citiez la source avec un petit lien vers le Github.
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Dataset" property="dct:title" rel="dct:type">POSL Rover</span> de <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Almisuifre</span> est mis à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licence Creative Commons Attribution -  Partage dans les Mêmes Conditions 4.0 International</a>.<br />Fondé(e) sur une œuvre à <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/Almisuifre/POSL-ROVER" rel="dct:source">https://github.com/Almisuifre/POSL-ROVER</a>.
 
 -----------------------------------------------------
 
