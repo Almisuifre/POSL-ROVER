@@ -23,6 +23,7 @@ class iface1(tk.Frame):
         self.interfaceSurPlace = tk.LabelFrame(self, text="Direction sur place", padx = 20, pady = 20)
         self.interfaceSaisieDirect = tk.LabelFrame(self, text="Saisie de datas", padx = 20, pady = 20)
         self.interfaceSpeed = tk.LabelFrame(self, text="Vitesse", padx = 20, pady = 20)
+        self.interfaceDistance = tk.LabelFrame(self, text="Distance (cm)", padx = 20, pady = 20)
         self.interfaceInfos = tk.LabelFrame(self, text="Informations", padx = 20, pady = 20)
         self.interfaceConnexion = tk.LabelFrame(self, text="Connection", padx = 20, pady = 20)
         
@@ -35,6 +36,8 @@ class iface1(tk.Frame):
         self.myImgRDD = tk.PhotoImage(file="ressources/icones/rdd.gif")
         self.myImgAR = tk.PhotoImage(file="ressources/icones/ar.gif")
         self.myImgRT = tk.PhotoImage(file="ressources/icones/rt.gif")
+        self.myImgRTG = tk.PhotoImage(file="ressources/icones/rtg.gif")
+        self.myImgRTD = tk.PhotoImage(file="ressources/icones/rtd.gif")
         self.myImgTSPG = tk.PhotoImage(file="ressources/icones/tspg.gif")
         self.myImgRSP = tk.PhotoImage(file="ressources/icones/rsp.gif")
         self.myImgTSPD = tk.PhotoImage(file="ressources/icones/tspd.gif")
@@ -51,6 +54,8 @@ class iface1(tk.Frame):
         self.btRDD = tk.Button(self.interfaceDirect, image=self.myImgRDD, bg = "grey", command=self.rdd)
         self.btAR = tk.Button(self.interfaceDirect, image=self.myImgAR, bg = "grey", command=self.ar)
         self.btRT = tk.Button(self.interfaceDirect, image=self.myImgRT, bg = "grey", command=self.rt)
+        self.btRTG = tk.Button(self.interfaceDirect, image=self.myImgRTG, bg = "grey", command=self.rtg)
+        self.btRTD = tk.Button(self.interfaceDirect, image=self.myImgRTD, bg = "grey", command=self.rtd)
         self.scaleDirAV = tk.Scale(self.interfaceDirect, from_=0, to=180, orient=tk.HORIZONTAL, resolution=5, tickinterval=2)
         self.scaleDirAV.set(90)
         self.scaleDirAR = tk.Scale(self.interfaceDirect, from_=180, to=0, orient=tk.HORIZONTAL, resolution=5, tickinterval=2)
@@ -61,16 +66,18 @@ class iface1(tk.Frame):
         self.btRSP = tk.Button(self.interfaceSurPlace, image=self.myImgRSP, bg = "grey", command=self.rsp)
         self.btTSPD = tk.Button(self.interfaceSurPlace, image=self.myImgTSPD, bg = "grey", command=self.tspd)
         
-        self.scaleSpeed = tk.Scale(self.interfaceSpeed, from_=255, to=100, tickinterval=2)
+        self.scaleSpeed = tk.Scale(self.interfaceSpeed, from_=255, to=80, tickinterval=2)
 
         self.btCo = tk.Button(self.interfaceConnexion, image=self.myImgCO, bg = "green", command=self.serialConn)
 
         self.btSendDirect = tk.Button(self.interfaceSaisieDirect, image=self.myImgSD, bg = "green", command=self.send_direct)
 
         #Saisie de texte
+        self.distance = tk.Entry(self.interfaceDistance)
+        self.distance.insert(0,"5")
         self.directData = tk.Entry(self.interfaceSaisieDirect)
         self.textInfos = tk.Text(self.interfaceInfos, width=50, height=20, wrap=tk.WORD)
-        
+
         #Positionnement des boutons généraux
         self.interfaceDirect.grid(column=0, row=0, sticky='NS')
         self.btAV.grid(column=2, row=0)
@@ -80,7 +87,9 @@ class iface1(tk.Frame):
         self.btRDG.grid(column=0, row=1)
         self.btRDD.grid(column=4, row=1)
         self.btAR.grid(column=2, row=2)
-        self.btRT.grid(column=0, row=3)
+        self.btRTG.grid(column=0, row=3)
+        self.btRT.grid(column=1, row=3)
+        self.btRTD.grid(column=2, row=3)
         self.scaleDirAV.grid(column=0, row=4, columnspan=5)
         self.scaleDirAR.grid(column=0, row=5, columnspan=5)
         self.currentManDir.grid(column=5, row=5, rowspan=2, columnspan=5)
@@ -88,6 +97,10 @@ class iface1(tk.Frame):
         #Positionnement de la gestion de vitesse
         self.interfaceSpeed.grid(column=1, row=0, rowspan=2, sticky='NS')
         self.scaleSpeed.grid(column=0, row=0)
+
+        #Positionnement de la gestion de la distance
+        self.interfaceDistance.grid(column=1, row=1, rowspan=2, sticky='NS')
+        self.distance.grid(column=0, row=0)
 
         #Positionnement des boutons spéciaux
         self.interfaceSurPlace.grid(column=0, row=1, sticky='NS')
@@ -105,19 +118,28 @@ class iface1(tk.Frame):
         self.textInfos.grid(column=0, row=0)
 
         #Positionnement de la partie connection
-        self.interfaceConnexion.grid(column=1, row=2, sticky='NS')
+        self.interfaceConnexion.grid(column=1, row=3, sticky='NS')
         self.btCo.grid(column=0, row=0)
 
         #self.serialConn()   #Lance la connection sur le mode serial en mode automatique
-
+        
+    #Calcul du temps donné par rapport à une distance demandé
+    #delay(3000) = 1 tour de roue = 18cm parcourus
+    #distance (cm) * 3000 / 18 = temps à effectué.
+    def distanceRoute(self):
+        distanceCommand = self.distance.get() #Mise à jour de la distance
+        timeRoute = ((int(distanceCommand) * 3000)/18)
+        return timeRoute
+    
     #Avant
     def av(self):
         speed = self.scaleSpeed.get() #Mise à jour de la vitesse
+        distance = self.distanceRoute() #Récupère le temps demandé par rapport à une distance demandé
         #Si on utilise l'interface 1 
         if self.currentInterface == 1:
             #Si on a la connection lancé
             if self.serialConnection == 1:
-                self.serialOrdre("!,1,1," + str(speed) + ",1," + str(speed) + ",1," + str(speed) + ",1," + str(speed) + ",*")
+                self.serialOrdre("!,1,1," + str(speed) + ",1," + str(speed) + ",1," + str(speed) + ",1," + str(speed) + "," + str(distance) + ",*")
 
     #Roues Gauches
     def rg(self):
@@ -187,11 +209,12 @@ class iface1(tk.Frame):
     #Arrières
     def ar(self):
         speed = self.scaleSpeed.get() #Mise à jour de la vitesse
+        distance = self.distanceRoute() #Récupère le temps demandé par rapport à une distance demandé
         #Si on utilise l'interface 1 
         if self.currentInterface == 1:
             #Si on a la connection lancé
             if self.serialConnection == 1:
-                self.serialOrdre("!,1,0," + str(speed) + ",0," + str(speed) + ",0," + str(speed) + ",0," + str(speed) + ",*")
+                self.serialOrdre("!,1,0," + str(speed) + ",0," + str(speed) + ",0," + str(speed) + ",0," + str(speed) + "," + str(distance) + ",*")
 
     #Roues Transbordeur
     def rt(self):
@@ -202,10 +225,34 @@ class iface1(tk.Frame):
 
         #Si on a la connection lancé
         if self.serialConnection == 1:
-            self.serialOrdre("!,2,0,10,10,5,*")
+            #self.serialOrdre("!,2,0,10,10,5,*")
+            #!,2,0,180,180,0,*
+            self.serialOrdre("!,2,0,180,180,0,*")
             self.scaleDirAV.set(110)
             self.scaleDirAR.set(110)
 
+    #Roues transbordeur avancer à gauche
+    def rtg(self):
+        #Si on utilise l'interface 1 
+        if self.currentInterface == 1:
+            #Si on a la connection lancé
+            if self.serialConnection == 1:
+                speed = self.scaleSpeed.get() #Mise à jour de la vitesse
+                distance = self.distanceRoute() #Récupère le temps demandé par rapport à une distance demandé
+                
+                self.serialOrdre("!,1,1," + str(speed) + ",0," + str(speed) + ",0," + str(speed) + ",1," + str(speed) + "," + str(distance) + ",*")
+                
+    #Roues transbordeur avancer à gauche
+    def rtd(self):
+        #Si on utilise l'interface 1 
+        if self.currentInterface == 1:
+            #Si on a la connection lancé
+            if self.serialConnection == 1:
+                speed = self.scaleSpeed.get() #Mise à jour de la vitesse
+                distance = self.distanceRoute() #Récupère le temps demandé par rapport à une distance demandé
+                
+                self.serialOrdre("!,1,0," + str(speed) + ",1," + str(speed) + ",1," + str(speed) + ",0," + str(speed) + "," + str(distance) + ",*")
+                
     #Mise à jour de la direction manuelle
     def manDir(self):
         #Si on utilise l'interface 1 
@@ -275,7 +322,7 @@ class iface1(tk.Frame):
         if self.currentInterface == 2:
             #Si on a la connection lancé
             if self.serialConnection == 1:
-                self.serialOrdre("!,1,0," + str(speed) + ",1," + str(speed) + ",0," + str(speed) + ",1," + str(speed) + ",*")
+                self.serialOrdre("!,1,0," + str(speed) + ",1," + str(speed) + ",0," + str(speed) + ",1," + str(speed) + ",1000,*")
 
     #Roues Sur Place
     def rsp(self):
@@ -292,7 +339,7 @@ class iface1(tk.Frame):
         if self.currentInterface == 2:
             #Si on a la connection lancé
             if self.serialConnection == 1:
-                self.serialOrdre("!,1,1," + str(speed) + ",0," + str(speed) + ",1," + str(speed) + ",0," + str(speed) + ",*")
+                self.serialOrdre("!,1,1," + str(speed) + ",0," + str(speed) + ",1," + str(speed) + ",0," + str(speed) + ",1000,*")
     #Initialisation du rover
     def initRover(self):
         #Active les boutons standards
@@ -328,7 +375,9 @@ class iface1(tk.Frame):
             self.btRDG.configure(bg = "green")
             self.btRDD.configure(bg = "green")
             self.btAR.configure(bg = "green")
+            self.btRTG.configure(bg = "green")
             self.btRT.configure(bg = "green")
+            self.btRTD.configure(bg = "green")
             self.currentManDir.configure(bg = "green")
             self.btTSPG.configure(bg = "red")
             self.btRSP.configure(bg = "blue")
@@ -347,7 +396,9 @@ class iface1(tk.Frame):
             self.btRDG.configure(bg = "green")
             self.btRDD.configure(bg = "green")
             self.btAR.configure(bg = "red")
-            self.btRT.configure(bg = "green")
+            self.btRTG.configure(bg = "red")
+            self.btRT.configure(bg = "blue")
+            self.btRTD.configure(bg = "red")
             self.currentManDir.configure(bg = "red")
             self.btTSPG.configure(bg = "green")
             self.btRSP.configure(bg = "grey")
