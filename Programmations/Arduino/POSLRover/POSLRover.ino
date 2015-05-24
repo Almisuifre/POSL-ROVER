@@ -53,8 +53,8 @@
 
 #define SERVO_CENTRE_AVG  88
 #define SERVO_CENTRE_ARG  94
-#define SERVO_CENTRE_AVD  90
-#define SERVO_CENTRE_ARD  94
+#define SERVO_CENTRE_AVD  96
+#define SERVO_CENTRE_ARD  92
 
 /* -- INSTANCIATIONS -- */
 Servo ServoAvantGauche;  //Servomoteur avant gauche
@@ -163,6 +163,9 @@ void traitementMessage(String message)
       !,1,1,100,1,100,1,100,1,100,* = Moteurs Marche AV
       !,1,0,100,0,100,0,100,0,100,* = Moteurs Marche AR
       
+      !,1,1,100,0,100,1,100,0,100,* = Tourner à droite sur place
+      !,1,0,100,1,100,0,100,1,100,* = Tourner à gauche sur place
+      
       !,1,2,102,3,103,4,104,5,105,*
       
     Exemples (Directions):
@@ -176,7 +179,7 @@ void traitementMessage(String message)
   */
   String data;
   int instruction = 0;
-  int data1 = 0, data2 = 0, data3 = 0, data4 = 0, data5 = 0, data6 = 0, data7 = 0, data8 = 0; 
+  int data1 = 0, data2 = 0, data3 = 0, data4 = 0, data5 = 0, data6 = 0, data7 = 0, data8 = 0, data9 = 0; 
   int index = 0, index2 = 0;
   
   int positionServoAvG = SERVO_CENTRE_AVG;
@@ -195,7 +198,7 @@ void traitementMessage(String message)
   switch (instruction)
   {
     case INSTRUCTION_MOTEURS :
-      for(int i = 0; i < 8; i++)
+      for(int i = 0; i < 9; i++)
       {
         index = message.indexOf(SEP_CHAR);
         data = message.substring(0, index);
@@ -208,7 +211,8 @@ void traitementMessage(String message)
         if(i == 4) data5 = data.toInt();
         if(i == 5) data6 = data.toInt();
         if(i == 6) data7 = data.toInt();
-        if(i == 7) data8 = data.toInt();     
+        if(i == 7) data8 = data.toInt();
+        if(i == 8) data9 = data.toInt();  //Ajouter pour tester    
       }
       
       MoteurAvantGauche.Action(data1, data2);
@@ -216,6 +220,13 @@ void traitementMessage(String message)
       MoteurArriereGauche.Action(data5, data6);
       MoteurArriereDroit.Action(data7, data8);
 
+      //delay(1000);
+      delay(data9);
+      
+      MoteurAvantGauche.Action(0, 0);
+      MoteurAvantDroit.Action(0, 0);
+      MoteurArriereGauche.Action(0, 0);
+      MoteurArriereDroit.Action(0, 0);
       
       break;
   
@@ -241,6 +252,7 @@ void traitementMessage(String message)
       ServoArrieGauche.write(positionServoArG);
       ServoAvantDroit.write(positionServoAvD);
       ServoArrieDroit.write(positionServoArD);
+      
       break;
   }
 }
