@@ -51,6 +51,19 @@ color: rgb(14, 241, 33);</string>
      </rect>
     </property>
    </widget>
+   <widget class="QPushButton" name="btnDatasTests">
+    <property name="geometry">
+     <rect>
+      <x>578</x>
+      <y>70</y>
+      <width>141</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Envois Datas Tests</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">

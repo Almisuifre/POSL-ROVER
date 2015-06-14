@@ -8,6 +8,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     this->showFullScreen();
 
     m_serial = NULL;
+    m_connectionOK = false;
+    btnDatasTests->setEnabled(false);
 
     // remplissage de la combobox
     foreach (const QSerialPortInfo &serialPortInfo, QSerialPortInfo::availablePorts())
@@ -16,14 +18,11 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 
 MainWindow::~MainWindow()
 {
-    /*
-    if(m_serial)
+    if(m_connectionOK)
     {
         if(m_serial->isOpen()) m_serial->close();
         delete m_serial;
     }
-    */
-    /*Test*/
 }
 
 
@@ -50,18 +49,11 @@ MainWindow::on_btnConnectionPort_clicked()
 
     if(m_serial->isOpen())
     {
-        m_serial->write("!,1,1,80,1,80,1,80,1,80,100,*");
+        console->append(QString("Connection réussie sur %1 !").arg(port));
+        m_connectionOK = true;
 
-        if(!m_serial->waitForReadyRead(10000))
-        {
-            console->append("Aucune confirmation de bonne réception n'a été reçue");
-        }
-
-        m_serial->close();
+        btnDatasTests->setEnabled(true);
     }
-
-    delete m_serial;
-
 
 /*
     console->append("Number of serial ports:" + QSerialPortInfo::availablePorts().count());
@@ -109,4 +101,15 @@ MainWindow::readData()
 {
     QByteArray ba = m_serial->readAll();
     console->append(QString(ba));
+}
+
+void
+MainWindow::on_btnDatasTests_clicked()
+{
+    m_serial->write("!,1,1,80,1,80,1,80,1,80,100,*");
+
+    if(!m_serial->waitForReadyRead(10000))
+    {
+        console->append("Aucune confirmation de bonne réception n'a été reçue");
+    }
 }
