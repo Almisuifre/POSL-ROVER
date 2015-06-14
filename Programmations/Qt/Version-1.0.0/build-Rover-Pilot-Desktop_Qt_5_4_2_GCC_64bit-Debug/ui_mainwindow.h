@@ -18,6 +18,7 @@
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
 
@@ -27,7 +28,8 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralWidget;
-    QPushButton *superBouton;
+    QPushButton *btnConnectionFTDI;
+    QTextBrowser *console;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -36,16 +38,21 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(400, 300);
+        MainWindow->resize(654, 574);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        superBouton = new QPushButton(centralWidget);
-        superBouton->setObjectName(QStringLiteral("superBouton"));
-        superBouton->setGeometry(QRect(80, 40, 221, 71));
+        btnConnectionFTDI = new QPushButton(centralWidget);
+        btnConnectionFTDI->setObjectName(QStringLiteral("btnConnectionFTDI"));
+        btnConnectionFTDI->setGeometry(QRect(480, 30, 161, 71));
+        console = new QTextBrowser(centralWidget);
+        console->setObjectName(QStringLiteral("console"));
+        console->setGeometry(QRect(10, 120, 641, 391));
+        console->setStyleSheet(QLatin1String("background-color: rgb(0, 0, 0);\n"
+"color: rgb(14, 241, 33);"));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 400, 25));
+        menuBar->setGeometry(QRect(0, 0, 654, 25));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -62,7 +69,7 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
-        superBouton->setText(QApplication::translate("MainWindow", "Test", 0));
+        btnConnectionFTDI->setText(QApplication::translate("MainWindow", "Connection FTDI", 0));
     } // retranslateUi
 
 };

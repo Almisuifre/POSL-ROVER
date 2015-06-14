@@ -20,7 +20,7 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_MainWindow_t {
     QByteArrayData data[3];
-    char stringdata[35];
+    char stringdata[41];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -30,11 +30,12 @@ struct qt_meta_stringdata_MainWindow_t {
 static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_MainWindow = {
     {
 QT_MOC_LITERAL(0, 0, 10), // "MainWindow"
-QT_MOC_LITERAL(1, 11, 22), // "on_superBouton_clicked"
-QT_MOC_LITERAL(2, 34, 0) // ""
+QT_MOC_LITERAL(1, 11, 28), // "on_btnConnectionFTDI_clicked"
+QT_MOC_LITERAL(2, 40, 0) // ""
 
     },
-    "MainWindow\0on_superBouton_clicked\0"
+    "MainWindow\0on_btnConnectionFTDI_clicked\0"
+    ""
 };
 #undef QT_MOC_LITERAL
 
@@ -65,7 +66,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
     if (_c == QMetaObject::InvokeMetaMethod) {
         MainWindow *_t = static_cast<MainWindow *>(_o);
         switch (_id) {
-        case 0: _t->on_superBouton_clicked(); break;
+        case 0: _t->on_btnConnectionFTDI_clicked(); break;
         default: ;
         }
     }

@@ -6,25 +6,39 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>654</width>
+    <height>574</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QPushButton" name="superBouton">
+   <widget class="QPushButton" name="btnConnectionFTDI">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>40</y>
-      <width>221</width>
+      <x>480</x>
+      <y>30</y>
+      <width>161</width>
       <height>71</height>
      </rect>
     </property>
     <property name="text">
-     <string>Test</string>
+     <string>Connection FTDI</string>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="console">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>120</y>
+      <width>641</width>
+      <height>391</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(14, 241, 33);</string>
     </property>
    </widget>
   </widget>
@@ -33,7 +47,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>400</width>
+     <width>654</width>
      <height>25</height>
     </rect>
    </property>
