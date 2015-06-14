@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="48"
+   height="48"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.3.1 r9886"
+   inkscape:export-filename="/home/alexandre/Documents/Programmations/Python/POSL-Rover/ressources/icones/deco.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"
+   sodipodi:docname="icone-connexion.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="8.9714173"
+     inkscape:cx="10.042623"
+     inkscape:cy="15.565144"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer6"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1007"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer5"
+     inkscape:label="Decor">
+    <path
+       sodipodi:type="arc"
+       style="opacity:0.98999999000000005;fill:#550000;stroke:none"
+       id="path3497"
+       sodipodi:cx="20.509581"
+       sodipodi:cy="14.449002"
+       sodipodi:rx="5.3503251"
+       sodipodi:ry="5.3503251"
+       d="m 25.859906,14.449002 a 5.3503251,5.3503251 0 1 1 -10.70065,0 5.3503251,5.3503251 0 1 1 10.70065,0 z"
+       transform="matrix(0.51041666,0,0,0.51041666,-3.2789314,13.14884)" />
+    <rect
+       style="opacity:0.98999999000000005;fill:#550000;stroke:none"
+       id="rect3499"
+       width="2.7866278"
+       height="22.181555"
+       x="5.90765"
+       y="20.91398" />
+    <path
+       sodipodi:type="arc"
+       style="opacity:0.98999999000000005;fill:none;stroke:#550000"
+       id="path3507"
+       sodipodi:cx="24.633789"
+       sodipodi:cy="20.913979"
+       sodipodi:rx="5.1273952"
+       sodipodi:ry="5.1273952"
+       d="m 29.760403,21.003464 a 5.1273952,5.1273952 0 0 1 -9.476818,2.624535"
+       sodipodi:start="0.017453293"
+       sodipodi:end="2.5837966"
+       sodipodi:open="true"
+       transform="matrix(-0.50942863,-0.86051291,0.86051291,-0.50942863,2.033912,51.909779)" />
+    <path
+       sodipodi:type="arc"
+       style="opacity:0.98999999000000005;fill:none;stroke:#550000"
+       id="path3507-2"
+       sodipodi:cx="24.633789"
+       sodipodi:cy="20.913979"
+       sodipodi:rx="5.1273952"
+       sodipodi:ry="5.1273952"
+       d="m 29.760403,21.003464 a 5.1273952,5.1273952 0 0 1 -9.476818,2.624535"
+       sodipodi:start="0.017453293"
+       sodipodi:end="2.5837966"
+       sodipodi:open="true"
+       transform="matrix(-0.82904422,-1.2591755,1.4003988,-0.7454392,-0.49741547,65.534401)" />
+    <path
+       sodipodi:type="arc"
+       style="opacity:0.98999999000000005;fill:none;stroke:#550000"
+       id="path3507-2-8"
+       sodipodi:cx="24.633789"
+       sodipodi:cy="20.913979"
+       sodipodi:rx="5.1273952"
+       sodipodi:ry="5.1273952"
+       d="m 29.760403,21.003464 a 5.1273952,5.1273952 0 0 1 -9.476818,2.624535"
+       sodipodi:start="0.017453293"
+       sodipodi:end="2.5837966"
+       sodipodi:open="true"
+       transform="matrix(-1.0515923,-1.6437789,1.7763209,-0.97312666,-1.5486662,78.271111)" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer6"
+     inkscape:label="Calque">
+    <rect
+       style="opacity:0.98999999;fill:#ff0000;stroke:#ff0000;stroke-width:3.47305775;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect2990"
+       width="60.107601"
+       height="1.5358657"
+       x="2.0112126"
+       y="1.9622815"
+       transform="matrix(0.74550067,0.66650488,0,1,0,0)" />
+    <rect
+       style="opacity:0.98999999;fill:#ff0000;stroke:#ff0000;stroke-width:3.47305775;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect2990-1"
+       width="60.107601"
+       height="1.5358657"
+       x="-62.118813"
+       y="44.705257"
+       transform="matrix(-0.74550067,0.66650488,0,1,0,0)" />
+    <text
+       xml:space="preserve"
+       style="font-size:21.32096480999999955px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#550000;fill-opacity:1;stroke:none;font-family:'the King &amp; Queen font';-inkscape-font-specification:'the King &amp; Queen font'"
+       x="15.294384"
+       y="44.035107"
+       id="text3546"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3548"
+         x="15.294384"
+         y="44.035107"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#550000;font-family:Aero Matics Display;-inkscape-font-specification:Aero Matics Display Bold">Off</tspan></text>
+  </g>
+</svg>
