@@ -23,7 +23,7 @@ MainWindow::~MainWindow()
 
 
 void
-MainWindow::on_cbListeTTY_currentIndexChanged()
+MainWindow::on_cbListeTTY_currentIndexChanged(int)
 {
     btnConnectionPort->setText(QString("Connection sur %1").arg(cbListeTTY->currentText()));
 }
@@ -43,9 +43,17 @@ MainWindow::on_btnConnectionPort_clicked()
 
     if(m_serial->isOpen())
     {
-        m_serial->write("!,2,90,90,90,90,*");
+        m_serial->write("!,1,1,80,1,80,1,80,1,80,100,*");
 
-        m_serial->waitForBytesWritten(10000);
+        if(m_serial->waitForReadyRead(10000))
+        {
+            QByteArray ba = m_serial->readAll();
+            console->append(QString(ba));
+        }
+        else
+        {
+            console->append("Aucune confirmation de bonne réception n'a été reçue");
+        }
 
         m_serial->close();
     }

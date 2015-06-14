@@ -19,8 +19,8 @@
      <rect>
       <x>570</x>
       <y>20</y>
-      <width>161</width>
-      <height>71</height>
+      <width>151</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
@@ -44,8 +44,8 @@ color: rgb(14, 241, 33);</string>
    <widget class="QComboBox" name="cbListeTTY">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>90</y>
+      <x>240</x>
+      <y>20</y>
       <width>291</width>
       <height>27</height>
      </rect>

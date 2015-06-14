@@ -51,7 +51,7 @@ public:
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         btnConnectionPort = new QPushButton(centralWidget);
         btnConnectionPort->setObjectName(QStringLiteral("btnConnectionPort"));
-        btnConnectionPort->setGeometry(QRect(570, 20, 161, 71));
+        btnConnectionPort->setGeometry(QRect(570, 20, 151, 31));
         console = new QTextBrowser(centralWidget);
         console->setObjectName(QStringLiteral("console"));
         console->setGeometry(QRect(770, 10, 281, 391));
@@ -59,7 +59,7 @@ public:
 "color: rgb(14, 241, 33);"));
         cbListeTTY = new QComboBox(centralWidget);
         cbListeTTY->setObjectName(QStringLiteral("cbListeTTY"));
-        cbListeTTY->setGeometry(QRect(140, 90, 291, 27));
+        cbListeTTY->setGeometry(QRect(240, 20, 291, 27));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));

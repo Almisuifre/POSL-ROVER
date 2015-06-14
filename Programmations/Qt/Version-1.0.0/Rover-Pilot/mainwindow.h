@@ -16,12 +16,12 @@ public:
     ~MainWindow();
 
 private :
-    QSerialPort *m_serial;
+    QSerialPort *m_serial = NULL;
 
 private slots:
     void on_btnConnectionPort_clicked();
     void on_actionQuitter_triggered();
-    void on_cbListeTTY_currentIndexChanged();
+    void on_cbListeTTY_currentIndexChanged(int);
 };
 
 #endif // MAINWINDOW_H
