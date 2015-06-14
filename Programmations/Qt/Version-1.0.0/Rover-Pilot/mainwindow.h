@@ -11,6 +11,9 @@ class MainWindow : public QMainWindow, private Ui_MainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+
+private slots:
+    void on_superBouton_clicked();
 };
 
 #endif // MAINWINDOW_H
