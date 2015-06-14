@@ -19,8 +19,19 @@ MainWindow::on_btnConnectionFTDI_clicked()
 {
     console->append("Début de connection sur FTDI...");
 
-    //m_serial = new QSerialPort("/dev/ttyUSB0");
+    m_serial = new QSerialPort("/dev/ttyUSB0");
 
+    m_serial->open(QIODevice::ReadWrite);
+
+    if(m_serial->isOpen())
+    {
+        m_serial->write("!,2,90,90,90,90,*");
+        m_serial->close();
+    }
+
+
+
+/*
     console->append("Number of serial ports:" + QSerialPortInfo::availablePorts().count());
 
     foreach (const QSerialPortInfo &serialPortInfo, QSerialPortInfo::availablePorts())
@@ -52,4 +63,5 @@ MainWindow::on_btnConnectionFTDI_clicked()
         }
         delete port;
     }
+*/
 }
