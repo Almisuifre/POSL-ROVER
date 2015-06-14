@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
@@ -27,9 +28,11 @@ QT_BEGIN_NAMESPACE
 class Ui_MainWindow
 {
 public:
+    QAction *actionQuitter;
     QWidget *centralWidget;
-    QPushButton *btnConnectionFTDI;
+    QPushButton *btnConnectionPort;
     QTextBrowser *console;
+    QComboBox *cbListeTTY;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -38,21 +41,29 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(654, 574);
+        MainWindow->resize(1081, 574);
+        actionQuitter = new QAction(MainWindow);
+        actionQuitter->setObjectName(QStringLiteral("actionQuitter"));
+        QIcon icon;
+        icon.addFile(QStringLiteral(":/icones/ressources/icones/Quit.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionQuitter->setIcon(icon);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        btnConnectionFTDI = new QPushButton(centralWidget);
-        btnConnectionFTDI->setObjectName(QStringLiteral("btnConnectionFTDI"));
-        btnConnectionFTDI->setGeometry(QRect(480, 30, 161, 71));
+        btnConnectionPort = new QPushButton(centralWidget);
+        btnConnectionPort->setObjectName(QStringLiteral("btnConnectionPort"));
+        btnConnectionPort->setGeometry(QRect(570, 20, 161, 71));
         console = new QTextBrowser(centralWidget);
         console->setObjectName(QStringLiteral("console"));
-        console->setGeometry(QRect(10, 120, 641, 391));
+        console->setGeometry(QRect(770, 10, 281, 391));
         console->setStyleSheet(QLatin1String("background-color: rgb(0, 0, 0);\n"
 "color: rgb(14, 241, 33);"));
+        cbListeTTY = new QComboBox(centralWidget);
+        cbListeTTY->setObjectName(QStringLiteral("cbListeTTY"));
+        cbListeTTY->setGeometry(QRect(140, 90, 291, 27));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 654, 25));
+        menuBar->setGeometry(QRect(0, 0, 1081, 25));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -61,6 +72,8 @@ public:
         statusBar->setObjectName(QStringLiteral("statusBar"));
         MainWindow->setStatusBar(statusBar);
 
+        mainToolBar->addAction(actionQuitter);
+
         retranslateUi(MainWindow);
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -68,8 +81,9 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
-        btnConnectionFTDI->setText(QApplication::translate("MainWindow", "Connection FTDI", 0));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "ROVER - PILOTE", 0));
+        actionQuitter->setText(QApplication::translate("MainWindow", "Quitter", 0));
+        btnConnectionPort->setText(QApplication::translate("MainWindow", "Connection", 0));
     } // retranslateUi
 
 };

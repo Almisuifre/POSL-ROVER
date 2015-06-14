@@ -6,33 +6,33 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>654</width>
+    <width>1081</width>
     <height>574</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>ROVER - PILOTE</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QPushButton" name="btnConnectionFTDI">
+   <widget class="QPushButton" name="btnConnectionPort">
     <property name="geometry">
      <rect>
-      <x>480</x>
-      <y>30</y>
+      <x>570</x>
+      <y>20</y>
       <width>161</width>
       <height>71</height>
      </rect>
     </property>
     <property name="text">
-     <string>Connection FTDI</string>
+     <string>Connection</string>
     </property>
    </widget>
    <widget class="QTextBrowser" name="console">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>120</y>
-      <width>641</width>
+      <x>770</x>
+      <y>10</y>
+      <width>281</width>
       <height>391</height>
      </rect>
     </property>
@@ -41,13 +41,23 @@
 color: rgb(14, 241, 33);</string>
     </property>
    </widget>
+   <widget class="QComboBox" name="cbListeTTY">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>90</y>
+      <width>291</width>
+      <height>27</height>
+     </rect>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>654</width>
+     <width>1081</width>
      <height>25</height>
     </rect>
    </property>
@@ -59,10 +69,22 @@ color: rgb(14, 241, 33);</string>
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
+   <addaction name="actionQuitter"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionQuitter">
+   <property name="icon">
+    <iconset resource="ressources.qrc">
+     <normaloff>:/icones/ressources/icones/Quit.png</normaloff>:/icones/ressources/icones/Quit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Quitter</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="ressources.qrc"/>
+ </resources>
  <connections/>
 </ui>

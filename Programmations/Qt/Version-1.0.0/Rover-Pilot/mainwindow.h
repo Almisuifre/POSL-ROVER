@@ -19,7 +19,9 @@ private :
     QSerialPort *m_serial;
 
 private slots:
-    void on_btnConnectionFTDI_clicked();
+    void on_btnConnectionPort_clicked();
+    void on_actionQuitter_triggered();
+    void on_cbListeTTY_currentIndexChanged();
 };
 
 #endif // MAINWINDOW_H

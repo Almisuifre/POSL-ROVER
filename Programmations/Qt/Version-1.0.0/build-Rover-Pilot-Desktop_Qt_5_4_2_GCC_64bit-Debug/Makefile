@@ -49,9 +49,11 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../Rover-Pilot/main.cpp \
-		../Rover-Pilot/mainwindow.cpp moc_mainwindow.cpp
+		../Rover-Pilot/mainwindow.cpp qrc_ressources.cpp \
+		moc_mainwindow.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
+		qrc_ressources.o \
 		moc_mainwindow.o
 DIST          = /home/faustos/Qt/5.4/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/faustos/Qt/5.4/gcc_64/mkspecs/common/shell-unix.conf \
@@ -324,6 +326,7 @@ Makefile: ../Rover-Pilot/Rover-Pilot.pro /home/faustos/Qt/5.4/gcc_64/mkspecs/lin
 		/home/faustos/Qt/5.4/gcc_64/mkspecs/features/yacc.prf \
 		/home/faustos/Qt/5.4/gcc_64/mkspecs/features/lex.prf \
 		../Rover-Pilot/Rover-Pilot.pro \
+		../Rover-Pilot/ressources.qrc \
 		/home/faustos/Qt/5.4/gcc_64/lib/libQt5Widgets.prl \
 		/home/faustos/Qt/5.4/gcc_64/lib/libQt5Gui.prl \
 		/home/faustos/Qt/5.4/gcc_64/lib/libQt5Core.prl \
@@ -449,6 +452,7 @@ Makefile: ../Rover-Pilot/Rover-Pilot.pro /home/faustos/Qt/5.4/gcc_64/mkspecs/lin
 /home/faustos/Qt/5.4/gcc_64/mkspecs/features/yacc.prf:
 /home/faustos/Qt/5.4/gcc_64/mkspecs/features/lex.prf:
 ../Rover-Pilot/Rover-Pilot.pro:
+../Rover-Pilot/ressources.qrc:
 /home/faustos/Qt/5.4/gcc_64/lib/libQt5Widgets.prl:
 /home/faustos/Qt/5.4/gcc_64/lib/libQt5Gui.prl:
 /home/faustos/Qt/5.4/gcc_64/lib/libQt5Core.prl:
@@ -467,6 +471,7 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
+	$(COPY_FILE) --parents ../Rover-Pilot/ressources.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents ../Rover-Pilot/mainwindow.h $(DISTDIR)/
 	$(COPY_FILE) --parents ../Rover-Pilot/main.cpp ../Rover-Pilot/mainwindow.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../Rover-Pilot/mainwindow.ui $(DISTDIR)/
@@ -490,8 +495,13 @@ mocables: compiler_moc_header_make_all compiler_moc_source_make_all
 
 check: first
 
-compiler_rcc_make_all:
+compiler_rcc_make_all: qrc_ressources.cpp
 compiler_rcc_clean:
+	-$(DEL_FILE) qrc_ressources.cpp
+qrc_ressources.cpp: ../Rover-Pilot/ressources.qrc \
+		../Rover-Pilot/ressources/icones/Quit.png
+	/home/faustos/Qt/5.4/gcc_64/bin/rcc -name ressources ../Rover-Pilot/ressources.qrc -o qrc_ressources.cpp
+
 compiler_moc_header_make_all: moc_mainwindow.cpp
 compiler_moc_header_clean:
 	-$(DEL_FILE) moc_mainwindow.cpp
@@ -601,6 +611,55 @@ moc_mainwindow.cpp: /home/faustos/Qt/5.4/gcc_64/include/QtWidgets/QMainWindow \
 		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qtabwidget.h \
 		/home/faustos/Qt/5.4/gcc_64/include/QtGui/qicon.h \
 		ui_mainwindow.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtCore/QVariant \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/QAction \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qaction.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qactiongroup.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/QApplication \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qapplication.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtCore/qcoreapplication.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtCore/qeventloop.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtGui/qguiapplication.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtGui/qinputmethod.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/QButtonGroup \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qbuttongroup.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/QHeaderView \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qheaderview.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qabstractitemview.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qframe.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtCore/qabstractitemmodel.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtCore/qitemselectionmodel.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qstyleoption.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtGui/qvalidator.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtCore/qregularexpression.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qslider.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qabstractslider.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qstyle.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qtabbar.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qrubberband.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/QMenuBar \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qmenubar.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qmenu.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/QPushButton \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qpushbutton.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qabstractbutton.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/QStatusBar \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qstatusbar.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/QTextBrowser \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qtextbrowser.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qtextedit.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtGui/qtextdocument.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtGui/qtextoption.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtGui/qtextcursor.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtGui/qtextformat.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtGui/qpen.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/QToolBar \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qtoolbar.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/QWidget \
 		/home/faustos/Qt/5.4/gcc_64/include/QtSerialPort/QSerialPort \
 		/home/faustos/Qt/5.4/gcc_64/include/QtSerialPort/qserialport.h \
 		/home/faustos/Qt/5.4/gcc_64/include/QtSerialPort/qserialportglobal.h \
@@ -623,7 +682,7 @@ compiler_yacc_impl_make_all:
 compiler_yacc_impl_clean:
 compiler_lex_make_all:
 compiler_lex_clean:
-compiler_clean: compiler_moc_header_clean compiler_uic_clean 
+compiler_clean: compiler_rcc_clean compiler_moc_header_clean compiler_uic_clean 
 
 ####### Compile
 
@@ -734,18 +793,60 @@ main.o: ../Rover-Pilot/main.cpp ../Rover-Pilot/mainwindow.h \
 		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qtabwidget.h \
 		/home/faustos/Qt/5.4/gcc_64/include/QtGui/qicon.h \
 		ui_mainwindow.h \
-		/home/faustos/Qt/5.4/gcc_64/include/QtSerialPort/QSerialPort \
-		/home/faustos/Qt/5.4/gcc_64/include/QtSerialPort/qserialport.h \
-		/home/faustos/Qt/5.4/gcc_64/include/QtSerialPort/qserialportglobal.h \
-		/home/faustos/Qt/5.4/gcc_64/include/QtSerialPort/QSerialPortInfo \
-		/home/faustos/Qt/5.4/gcc_64/include/QtSerialPort/qserialportinfo.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtCore/QVariant \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/QAction \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qaction.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qactiongroup.h \
 		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/QApplication \
 		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qapplication.h \
 		/home/faustos/Qt/5.4/gcc_64/include/QtCore/qcoreapplication.h \
 		/home/faustos/Qt/5.4/gcc_64/include/QtCore/qeventloop.h \
 		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qdesktopwidget.h \
 		/home/faustos/Qt/5.4/gcc_64/include/QtGui/qguiapplication.h \
-		/home/faustos/Qt/5.4/gcc_64/include/QtGui/qinputmethod.h
+		/home/faustos/Qt/5.4/gcc_64/include/QtGui/qinputmethod.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/QButtonGroup \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qbuttongroup.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/QHeaderView \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qheaderview.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qabstractitemview.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qframe.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtCore/qabstractitemmodel.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtCore/qitemselectionmodel.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qstyleoption.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtGui/qvalidator.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtCore/qregularexpression.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qslider.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qabstractslider.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qstyle.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qtabbar.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qrubberband.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/QMenuBar \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qmenubar.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qmenu.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/QPushButton \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qpushbutton.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qabstractbutton.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/QStatusBar \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qstatusbar.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/QTextBrowser \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qtextbrowser.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qtextedit.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtGui/qtextdocument.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtGui/qtextoption.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtGui/qtextcursor.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtGui/qtextformat.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtGui/qpen.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/QToolBar \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qtoolbar.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/QWidget \
+		/home/faustos/Qt/5.4/gcc_64/include/QtSerialPort/QSerialPort \
+		/home/faustos/Qt/5.4/gcc_64/include/QtSerialPort/qserialport.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtSerialPort/qserialportglobal.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtSerialPort/QSerialPortInfo \
+		/home/faustos/Qt/5.4/gcc_64/include/QtSerialPort/qserialportinfo.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../Rover-Pilot/main.cpp
 
 mainwindow.o: ../Rover-Pilot/mainwindow.cpp ../Rover-Pilot/mainwindow.h \
@@ -855,6 +956,55 @@ mainwindow.o: ../Rover-Pilot/mainwindow.cpp ../Rover-Pilot/mainwindow.h \
 		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qtabwidget.h \
 		/home/faustos/Qt/5.4/gcc_64/include/QtGui/qicon.h \
 		ui_mainwindow.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtCore/QVariant \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/QAction \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qaction.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qactiongroup.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/QApplication \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qapplication.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtCore/qcoreapplication.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtCore/qeventloop.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtGui/qguiapplication.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtGui/qinputmethod.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/QButtonGroup \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qbuttongroup.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/QHeaderView \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qheaderview.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qabstractitemview.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qframe.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtCore/qabstractitemmodel.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtCore/qitemselectionmodel.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qstyleoption.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtGui/qvalidator.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtCore/qregularexpression.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qslider.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qabstractslider.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qstyle.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qtabbar.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qrubberband.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/QMenuBar \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qmenubar.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qmenu.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/QPushButton \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qpushbutton.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qabstractbutton.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/QStatusBar \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qstatusbar.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/QTextBrowser \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qtextbrowser.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qtextedit.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtGui/qtextdocument.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtGui/qtextoption.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtGui/qtextcursor.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtGui/qtextformat.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtGui/qpen.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/QToolBar \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qtoolbar.h \
+		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/QWidget \
 		/home/faustos/Qt/5.4/gcc_64/include/QtSerialPort/QSerialPort \
 		/home/faustos/Qt/5.4/gcc_64/include/QtSerialPort/qserialport.h \
 		/home/faustos/Qt/5.4/gcc_64/include/QtSerialPort/qserialportglobal.h \
@@ -863,6 +1013,9 @@ mainwindow.o: ../Rover-Pilot/mainwindow.cpp ../Rover-Pilot/mainwindow.h \
 		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qmessagebox.h \
 		/home/faustos/Qt/5.4/gcc_64/include/QtWidgets/qdialog.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../Rover-Pilot/mainwindow.cpp
+
+qrc_ressources.o: qrc_ressources.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_ressources.o qrc_ressources.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
