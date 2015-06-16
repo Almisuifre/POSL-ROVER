@@ -25,6 +25,7 @@ private slots:
     /* Boutons */
     void on_btnConnectionPort_clicked();
     void on_btnDatasTests_clicked();
+    void on_btnAvance_clicked();
 
     /* Actions */
     void on_actionQuitter_triggered();

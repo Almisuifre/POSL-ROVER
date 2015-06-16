@@ -113,3 +113,10 @@ MainWindow::on_btnDatasTests_clicked()
         console->append("Aucune confirmation de bonne réception n'a été reçue");
     }
 }
+
+void
+MainWindow::on_btnAvance_clicked()
+{
+    m_serial->write("!,1,1,80,1,80,1,80,1,80,200,*");
+    console->append(QString("%1 : %2 sur %3 ").arg("Avance", "80", "200"));
+}

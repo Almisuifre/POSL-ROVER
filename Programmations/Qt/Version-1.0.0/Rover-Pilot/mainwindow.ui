@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1081</width>
+    <width>1072</width>
     <height>574</height>
    </rect>
   </property>
@@ -14,26 +14,13 @@
    <string>ROVER - PILOTE</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QPushButton" name="btnConnectionPort">
-    <property name="geometry">
-     <rect>
-      <x>570</x>
-      <y>20</y>
-      <width>151</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Connection</string>
-    </property>
-   </widget>
    <widget class="QTextBrowser" name="console">
     <property name="geometry">
      <rect>
-      <x>770</x>
-      <y>10</y>
+      <x>20</x>
+      <y>50</y>
       <width>281</width>
-      <height>391</height>
+      <height>431</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -41,22 +28,12 @@
 color: rgb(14, 241, 33);</string>
     </property>
    </widget>
-   <widget class="QComboBox" name="cbListeTTY">
-    <property name="geometry">
-     <rect>
-      <x>240</x>
-      <y>20</y>
-      <width>291</width>
-      <height>27</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QPushButton" name="btnDatasTests">
     <property name="geometry">
      <rect>
-      <x>578</x>
-      <y>70</y>
-      <width>141</width>
+      <x>20</x>
+      <y>10</y>
+      <width>281</width>
       <height>27</height>
      </rect>
     </property>
@@ -64,14 +41,144 @@ color: rgb(14, 241, 33);</string>
      <string>Envois Datas Tests</string>
     </property>
    </widget>
+   <widget class="QTabWidget" name="tabCentrale">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>20</y>
+      <width>551</width>
+      <height>471</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 170, 0);</string>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="tabAccueil">
+     <attribute name="title">
+      <string>Accueil</string>
+     </attribute>
+    </widget>
+    <widget class="QWidget" name="tabPilotageRover">
+     <attribute name="title">
+      <string>Pilotage Rover</string>
+     </attribute>
+     <widget class="QPushButton" name="btnAvance">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>130</y>
+        <width>48</width>
+        <height>48</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="ressources.qrc">
+        <normaloff>:/icones/ressources/icones/av.png</normaloff>:/icones/ressources/icones/av.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>48</width>
+        <height>48</height>
+       </size>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QToolBox" name="tbMenu">
+    <property name="geometry">
+     <rect>
+      <x>880</x>
+      <y>0</y>
+      <width>191</width>
+      <height>481</height>
+     </rect>
+    </property>
+    <property name="acceptDrops">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 170, 0);</string>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="pgeConnexion">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>191</width>
+       <height>397</height>
+      </rect>
+     </property>
+     <attribute name="label">
+      <string>Connection</string>
+     </attribute>
+     <widget class="QComboBox" name="cbListeTTY">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>0</y>
+        <width>171</width>
+        <height>27</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnConnectionPort">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>171</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Connection</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="pgeOptionPilotageRover">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>191</width>
+       <height>397</height>
+      </rect>
+     </property>
+     <attribute name="label">
+      <string>Option pilotage Rover</string>
+     </attribute>
+    </widget>
+    <widget class="QWidget" name="pgeOptionPilotagePlateau">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>191</width>
+       <height>397</height>
+      </rect>
+     </property>
+     <attribute name="label">
+      <string>Option pilotage plateau</string>
+     </attribute>
+    </widget>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1081</width>
-     <height>25</height>
+     <width>1072</width>
+     <height>20</height>
     </rect>
    </property>
   </widget>
