@@ -122,38 +122,50 @@ MainWindow::on_btnDatasTests_clicked()
 void
 MainWindow::on_btnAvance_clicked()
 {
-    //Conversion valeur
-    int speedBtnValue = btnSpeed->value();
-    QString speedValue;
+//    //Conversion valeur
+//    int speedBtnValue = btnSpeed->value();
+//    QString speedValue;
 
-    //Conversion requête
-    QString requestData = QString("!,1,1,%1,1,%1,1,%1,1,%1,1000,*").arg(speedBtnValue);
-    QByteArray conv_requestData = requestData.toLatin1();
-    const char *c_requestData = conv_requestData.data();
+//    //Conversion requête
+//    QString requestData = QString("!,1,1,%1,1,%1,1,%1,1,%1,1000,*").arg(speedBtnValue);
+//    QByteArray conv_requestData = requestData.toLatin1();
+//    const char *c_requestData = conv_requestData.data();
+
+//    if(m_connectionOK)
+//    {
+//        m_serial->write(c_requestData);
+//        console->append(QString("%1 : %2 sur %3").arg("Avance", speedValue.setNum(speedBtnValue), "1000"));
+//    }
 
     if(m_connectionOK)
     {
-        m_serial->write(c_requestData);
-        console->append(QString("%1 : %2 sur %3").arg("Avance", speedValue.setNum(speedBtnValue), "1000"));
+        m_serial->write(QString("!,1,1,%1,1,%1,1,%1,1,%1,1000,*").arg(btnSpeed->value()).toStdString().c_str());
+        console->append(QString("%1 : %2 sur %3").arg("Avance", QString(btnSpeed->value()), "1000"));
     }
 }
 
 void
 MainWindow::on_btnRecule_clicked()
 {
-    //Conversion valeur
-    int speedBtnValue = btnSpeed->value();
-    QString speedValue;
+//    //Conversion valeur
+//    int speedBtnValue = btnSpeed->value();
+//    QString speedValue;
 
-    //Conversion requête
-    QString requestData = QString("!,1,0,%1,0,%1,0,%1,0,%1,1000,*").arg(speedBtnValue);
-    QByteArray conv_requestData = requestData.toLatin1();
-    const char *c_requestData = conv_requestData.data();
+//    //Conversion requête
+//    QString requestData = QString("!,1,0,%1,0,%1,0,%1,0,%1,1000,*").arg(speedBtnValue);
+//    QByteArray conv_requestData = requestData.toLatin1();
+//    const char *c_requestData = conv_requestData.data();
+
+//    if(m_connectionOK)
+//    {
+//        m_serial->write(c_requestData);
+//        console->append(QString("%1 : %2 sur %3").arg("Recule", speedValue.setNum(speedBtnValue), "1000"));
+//    }
 
     if(m_connectionOK)
     {
-        m_serial->write(c_requestData);
-        console->append(QString("%1 : %2 sur %3").arg("Recule", speedValue.setNum(speedBtnValue), "1000"));
+        m_serial->write(QString("!,1,0,%1,0,%1,0,%1,0,%1,1000,*").arg(btnSpeed->value()).toStdString().c_str());
+        console->append(QString("%1 : %2 sur %3").arg("Recule", QString(btnSpeed->value()), "1000"));
     }
 }
 
