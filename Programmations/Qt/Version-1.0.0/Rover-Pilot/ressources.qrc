@@ -2,5 +2,20 @@
     <qresource prefix="/icones">
         <file>ressources/icones/Quit.png</file>
         <file>ressources/icones/av.png</file>
+        <file>ressources/icones/ar.png</file>
+        <file>ressources/icones/cmd.png</file>
+        <file>ressources/icones/deco.png</file>
+        <file>ressources/icones/rc.png</file>
+        <file>ressources/icones/co.png</file>
+        <file>ressources/icones/rd.png</file>
+        <file>ressources/icones/rdd.png</file>
+        <file>ressources/icones/rdg.png</file>
+        <file>ressources/icones/rsp.png</file>
+        <file>ressources/icones/rg.png</file>
+        <file>ressources/icones/rt.png</file>
+        <file>ressources/icones/rtd.png</file>
+        <file>ressources/icones/rtg.png</file>
+        <file>ressources/icones/tspd.png</file>
+        <file>ressources/icones/tspg.png</file>
     </qresource>
 </RCC>

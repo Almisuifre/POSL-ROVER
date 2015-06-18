@@ -6,6 +6,7 @@
 
 #include <QSerialPort>
 #include <QSerialPortInfo>
+#include <QDebug>
 
 class MainWindow : public QMainWindow, private Ui_MainWindow
 {
@@ -25,7 +26,16 @@ private slots:
     /* Boutons */
     void on_btnConnectionPort_clicked();
     void on_btnDatasTests_clicked();
+
+    /* Marche */
     void on_btnAvance_clicked();
+    void on_btnRecule_clicked();
+
+    /* Roues */
+    void on_btnRouesAuCentre_clicked();
+
+    /* Contrôles */
+    void on_btnSpeed_valueChanged();
 
     /* Actions */
     void on_actionQuitter_triggered();

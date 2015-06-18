@@ -14,6 +14,10 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     // remplissage de la combobox
     foreach (const QSerialPortInfo &serialPortInfo, QSerialPortInfo::availablePorts())
         cbListeTTY->addItem(serialPortInfo.portName());
+
+    //Mise à niveau de la vitesse
+    lcdSpeed->display(80);
+    btnSpeed->setValue(80);
 }
 
 MainWindow::~MainWindow()
@@ -53,6 +57,7 @@ MainWindow::on_btnConnectionPort_clicked()
         m_connectionOK = true;
 
         btnDatasTests->setEnabled(true);
+        tbMenu->setCurrentIndex(1);
     }
 
 /*
@@ -117,6 +122,53 @@ MainWindow::on_btnDatasTests_clicked()
 void
 MainWindow::on_btnAvance_clicked()
 {
-    m_serial->write("!,1,1,80,1,80,1,80,1,80,200,*");
-    console->append(QString("%1 : %2 sur %3 ").arg("Avance", "80", "200"));
+    //Conversion valeur
+    int speedBtnValue = btnSpeed->value();
+    QString speedValue;
+
+    //Conversion requête
+    QString requestData = QString("!,1,1,%1,1,%1,1,%1,1,%1,1000,*").arg(speedBtnValue);
+    QByteArray conv_requestData = requestData.toLatin1();
+    const char *c_requestData = conv_requestData.data();
+
+    if(m_connectionOK)
+    {
+        m_serial->write(c_requestData);
+        console->append(QString("%1 : %2 sur %3").arg("Avance", speedValue.setNum(speedBtnValue), "1000"));
+    }
+}
+
+void
+MainWindow::on_btnRecule_clicked()
+{
+    //Conversion valeur
+    int speedBtnValue = btnSpeed->value();
+    QString speedValue;
+
+    //Conversion requête
+    QString requestData = QString("!,1,0,%1,0,%1,0,%1,0,%1,1000,*").arg(speedBtnValue);
+    QByteArray conv_requestData = requestData.toLatin1();
+    const char *c_requestData = conv_requestData.data();
+
+    if(m_connectionOK)
+    {
+        m_serial->write(c_requestData);
+        console->append(QString("%1 : %2 sur %3").arg("Recule", speedValue.setNum(speedBtnValue), "1000"));
+    }
+}
+
+void
+MainWindow::on_btnRouesAuCentre_clicked()
+{
+    if(m_connectionOK)
+    {
+        m_serial->write("!,2,90,90,90,90,*");
+        console->append(QString("%1 : %2").arg("Roues au centre", "!,2,90,90,90,90,*"));
+    }
+}
+
+void
+MainWindow::on_btnSpeed_valueChanged()
+{
+    lcdSpeed->display(btnSpeed->value());
 }
