@@ -140,7 +140,7 @@ MainWindow::on_btnAvance_clicked()
     if(m_connectionOK)
     {
         m_serial->write(QString("!,1,1,%1,1,%1,1,%1,1,%1,1000,*").arg(btnSpeed->value()).toStdString().c_str());
-        console->append(QString("%1 : %2 sur %3").arg("Avance", QString(btnSpeed->value()), "1000"));
+        console->append(QString("%1 : %2 sur %3").arg("Avance", QString::number(btnSpeed->value()), "1000"));
     }
 }
 
@@ -165,7 +165,7 @@ MainWindow::on_btnRecule_clicked()
     if(m_connectionOK)
     {
         m_serial->write(QString("!,1,0,%1,0,%1,0,%1,0,%1,1000,*").arg(btnSpeed->value()).toStdString().c_str());
-        console->append(QString("%1 : %2 sur %3").arg("Recule", QString(btnSpeed->value()), "1000"));
+        console->append(QString("%1 : %2 sur %3").arg("Recule", QString::number(btnSpeed->value()), "1000"));
     }
 }
 
