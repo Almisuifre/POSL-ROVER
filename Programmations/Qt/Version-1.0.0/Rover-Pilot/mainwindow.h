@@ -41,6 +41,8 @@ private slots:
 
     /* Actions */
     void on_actionQuitter_triggered();
+    void on_actionDeconnection_triggered();
+    void on_actionClearConsole_triggered();
 
     /* Serial */
     void readData();

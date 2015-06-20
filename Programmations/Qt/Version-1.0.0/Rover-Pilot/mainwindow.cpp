@@ -5,7 +5,7 @@
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 {
     setupUi(this);
-    this->showFullScreen();
+    //this->showFullScreen();
 
     m_serial = NULL;
     m_connectionOK = false;
@@ -122,25 +122,14 @@ MainWindow::on_btnDatasTests_clicked()
 void
 MainWindow::on_btnAvance_clicked()
 {
-//    //Conversion valeur
-//    int speedBtnValue = btnSpeed->value();
-//    QString speedValue;
-
-//    //Conversion requête
-//    QString requestData = QString("!,1,1,%1,1,%1,1,%1,1,%1,1000,*").arg(speedBtnValue);
-//    QByteArray conv_requestData = requestData.toLatin1();
-//    const char *c_requestData = conv_requestData.data();
-
-//    if(m_connectionOK)
-//    {
-//        m_serial->write(c_requestData);
-//        console->append(QString("%1 : %2 sur %3").arg("Avance", speedValue.setNum(speedBtnValue), "1000"));
-//    }
-
     if(m_connectionOK)
     {
         int distanceRoute = distanceToTime(distanceCm->value(), "cm");
-        m_serial->write(QString("!,1,1,%1,1,%1,1,%1,1,%1,%2,*").arg(btnSpeed->value(), distanceRoute).toStdString().c_str());
+        //distanceRoute = 1000;
+        QString data = QString("!,1,1,%1,1,%1,1,%1,1,%1,").arg(btnSpeed->value());
+        data.append(QString::number(distanceRoute));
+        data.append(",*");
+        m_serial->write(data.toStdString().c_str());
         console->append(QString("%1 : %2 sur %3").arg("Avance", QString::number(btnSpeed->value()), QString::number(distanceRoute)));
 
         //m_serial->write(QString("!,1,1,%1,1,%1,1,%1,1,%1,1000,*").arg(btnSpeed->value()).toStdString().c_str());
@@ -151,21 +140,6 @@ MainWindow::on_btnAvance_clicked()
 void
 MainWindow::on_btnRecule_clicked()
 {
-//    //Conversion valeur
-//    int speedBtnValue = btnSpeed->value();
-//    QString speedValue;
-
-//    //Conversion requête
-//    QString requestData = QString("!,1,0,%1,0,%1,0,%1,0,%1,1000,*").arg(speedBtnValue);
-//    QByteArray conv_requestData = requestData.toLatin1();
-//    const char *c_requestData = conv_requestData.data();
-
-//    if(m_connectionOK)
-//    {
-//        m_serial->write(c_requestData);
-//        console->append(QString("%1 : %2 sur %3").arg("Recule", speedValue.setNum(speedBtnValue), "1000"));
-//    }
-
     if(m_connectionOK)
     {
         m_serial->write(QString("!,1,0,%1,0,%1,0,%1,0,%1,1000,*").arg(btnSpeed->value()).toStdString().c_str());
@@ -189,22 +163,14 @@ MainWindow::on_btnSpeed_valueChanged()
     lcdSpeed->display(btnSpeed->value());
 }
 
-int MainWindow::distanceToTime(int distance, QString unite)
+int
+MainWindow::distanceToTime(int distance, QString unite)
 {
     double time = 0;
     int speed = 0;
 
     if(unite == "cm")
     {
-        /*
-         * C'est moche mais en attendant l'odométrie par capteur à effet hall c'est un delay() dans l'arduilol qui fait le travail
-         * delay(3000) = 1 tour de roue = 18cm parcourus
-         * temps delay() à tarnsmettre = distance (cm) * 3000 / 18
-         * */
-//        int distTime = ((distance * 3000)/18);
-//        return distTime;
-
-
         //on controle les limites
         speed = btnSpeed->value();
 
@@ -215,4 +181,22 @@ int MainWindow::distanceToTime(int distance, QString unite)
     }
 
     return ((static_cast<int>(time))*1000);
+}
+
+void
+MainWindow::on_actionClearConsole_triggered()
+{
+    console->clear();
+}
+
+
+void
+MainWindow::on_actionDeconnection_triggered()
+{
+    if(m_serial->isOpen())
+    {
+        m_serial->close();
+        m_connectionOK = false;
+        console->append(QString("Déconnection de %1 réussie.").arg(m_serial->portName()));
+    }
 }

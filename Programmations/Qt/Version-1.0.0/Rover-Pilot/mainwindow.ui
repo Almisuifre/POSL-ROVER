@@ -176,7 +176,7 @@ color: rgb(14, 241, 33);</string>
        <x>0</x>
        <y>0</y>
        <width>191</width>
-       <height>397</height>
+       <height>388</height>
       </rect>
      </property>
      <attribute name="label">
@@ -212,7 +212,7 @@ color: rgb(14, 241, 33);</string>
        <x>0</x>
        <y>0</y>
        <width>191</width>
-       <height>397</height>
+       <height>388</height>
       </rect>
      </property>
      <attribute name="label">
@@ -325,7 +325,7 @@ color: rgb(170, 255, 0);</string>
        <x>0</x>
        <y>0</y>
        <width>191</width>
-       <height>397</height>
+       <height>388</height>
       </rect>
      </property>
      <attribute name="label">
@@ -340,7 +340,7 @@ color: rgb(170, 255, 0);</string>
      <x>0</x>
      <y>0</y>
      <width>1081</width>
-     <height>20</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>
@@ -352,6 +352,8 @@ color: rgb(170, 255, 0);</string>
     <bool>false</bool>
    </attribute>
    <addaction name="actionQuitter"/>
+   <addaction name="actionClearConsole"/>
+   <addaction name="actionDeconnection"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionQuitter">
@@ -361,6 +363,16 @@ color: rgb(170, 255, 0);</string>
    </property>
    <property name="text">
     <string>Quitter</string>
+   </property>
+  </action>
+  <action name="actionClearConsole">
+   <property name="text">
+    <string>ClearConsole</string>
+   </property>
+  </action>
+  <action name="actionDeconnection">
+   <property name="text">
+    <string>déconnection</string>
    </property>
   </action>
  </widget>
