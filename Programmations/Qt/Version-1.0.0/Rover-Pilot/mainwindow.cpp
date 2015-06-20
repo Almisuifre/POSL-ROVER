@@ -139,8 +139,12 @@ MainWindow::on_btnAvance_clicked()
 
     if(m_connectionOK)
     {
-        m_serial->write(QString("!,1,1,%1,1,%1,1,%1,1,%1,1000,*").arg(btnSpeed->value()).toStdString().c_str());
-        console->append(QString("%1 : %2 sur %3").arg("Avance", QString::number(btnSpeed->value()), "1000"));
+        int distanceRoute = distanceToTime(distanceCm->value(), "cm");
+        m_serial->write(QString("!,1,1,%1,1,%1,1,%1,1,%1,%2,*").arg(btnSpeed->value(), distanceRoute).toStdString().c_str());
+        console->append(QString("%1 : %2 sur %3").arg("Avance", QString::number(btnSpeed->value()), QString::number(distanceRoute)));
+
+        //m_serial->write(QString("!,1,1,%1,1,%1,1,%1,1,%1,1000,*").arg(btnSpeed->value()).toStdString().c_str());
+        //console->append(QString("%1 : %2 sur %3").arg("Avance", QString::number(btnSpeed->value()), "1000"));
     }
 }
 
@@ -183,4 +187,18 @@ void
 MainWindow::on_btnSpeed_valueChanged()
 {
     lcdSpeed->display(btnSpeed->value());
+}
+
+int MainWindow::distanceToTime(int distance, QString unite)
+{
+    if(unite == "cm")
+    {
+        /*
+         * C'est moche mais en attendant l'odométrie par capteur à effet hall c'est un delay() dans l'arduilol qui fait le travail
+         * delay(3000) = 1 tour de roue = 18cm parcourus
+         * temps delay() à tarnsmettre = distance (cm) * 3000 / 18
+         * */
+        int distTime = ((distance * 3000)/18);
+        return distTime;
+    }
 }

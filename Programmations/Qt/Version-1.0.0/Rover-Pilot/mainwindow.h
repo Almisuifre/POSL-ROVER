@@ -22,6 +22,8 @@ public:
 private :
     QSerialPort *m_serial;
 
+    int distanceToTime(int distance, QString unite);
+
 private slots:
     /* Boutons */
     void on_btnConnectionPort_clicked();
