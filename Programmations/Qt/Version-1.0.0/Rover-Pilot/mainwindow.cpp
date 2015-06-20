@@ -191,6 +191,9 @@ MainWindow::on_btnSpeed_valueChanged()
 
 int MainWindow::distanceToTime(int distance, QString unite)
 {
+    double time = 0;
+    int speed = 0;
+
     if(unite == "cm")
     {
         /*
@@ -198,7 +201,18 @@ int MainWindow::distanceToTime(int distance, QString unite)
          * delay(3000) = 1 tour de roue = 18cm parcourus
          * temps delay() à tarnsmettre = distance (cm) * 3000 / 18
          * */
-        int distTime = ((distance * 3000)/18);
-        return distTime;
+//        int distTime = ((distance * 3000)/18);
+//        return distTime;
+
+
+        //on controle les limites
+        speed = btnSpeed->value();
+
+        if(speed > 80 && speed <= 255)
+        {
+            time = (double) distance / double(speed * 0.06);
+        }
     }
+
+    return (int)time;
 }
