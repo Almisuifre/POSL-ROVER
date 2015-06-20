@@ -210,9 +210,9 @@ int MainWindow::distanceToTime(int distance, QString unite)
 
         if(speed > 80 && speed <= 255)
         {
-            time = (double) distance / double(speed * 0.06);
+            time = (static_cast<double>(distance)) / static_cast<double>((static_cast<double>(speed)) * 0.07);
         }
     }
 
-    return (int)time;
+    return ((static_cast<int>(time))*1000);
 }
