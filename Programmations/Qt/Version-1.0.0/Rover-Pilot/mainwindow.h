@@ -3,53 +3,37 @@
 
 #include <QMainWindow>
 #include "ui_mainwindow.h"
+#include <communicationserie.h>
+#include <pilotagemoteurs.h>
+#include <pilotageplateau.h>
+#include <pilotagerover.h>
 
-#include <QSerialPort>
-#include <QSerialPortInfo>
+
 #include <QDebug>
 
 class MainWindow : public QMainWindow, private Ui_MainWindow
 {
     Q_OBJECT
 
-private:
-     bool m_connectionOK;
+    private:
 
-public:
-    explicit MainWindow(QWidget *parent = 0);
-    ~MainWindow();
+    public:
+        explicit MainWindow(QWidget *parent = 0);
+        ~MainWindow();
 
-private :
-    QSerialPort *m_serial;
+    private :
+        CommunicationSerie  *m_comSerie;
+        PilotageMoteurs     *m_pilotageMoteurs;
+        PilotagePlateau     *m_pilotagePlateau;
+        PilotageRover       *m_pilotageRover;
 
-    int distanceToTime(int distance, QString unite);
+    private slots:
+        /* Actions */
+        void on_actionQuitter_triggered();
+        void on_actionDeconnection_triggered();
+        void on_actionClearConsole_triggered();
 
-private slots:
-    /* Boutons */
-    void on_btnConnectionPort_clicked();
-    void on_btnDatasTests_clicked();
-
-    /* Marche */
-    void on_btnAvance_clicked();
-    void on_btnRecule_clicked();
-
-    /* Roues */
-    void on_btnRouesAuCentre_clicked();
-
-    /* Contrôles */
-    void on_btnSpeed_valueChanged();
-
-    /* Actions */
-    void on_actionQuitter_triggered();
-    void on_actionDeconnection_triggered();
-    void on_actionClearConsole_triggered();
-
-    /* Serial */
-    void readData();
-
-    /* Divers */
-    void on_cbListeTTY_currentIndexChanged(int);
-
+        void diplayInformations(QString informations);
 };
 
 #endif // MAINWINDOW_H

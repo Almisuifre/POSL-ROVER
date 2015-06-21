@@ -14,11 +14,23 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    communicationserie.cpp \
+    pilotagemoteurs.cpp \
+    pilotageplateau.cpp \
+    pilotagerover.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    communicationserie.h \
+    pilotagemoteurs.h \
+    pilotageplateau.h \
+    pilotagerover.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    communicationserie.ui \
+    pilotagemoteurs.ui \
+    pilotageplateau.ui \
+    pilotagerover.ui
 
 RESOURCES += \
     ressources.qrc
