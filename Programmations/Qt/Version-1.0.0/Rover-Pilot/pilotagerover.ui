@@ -18,8 +18,8 @@
     <rect>
      <x>10</x>
      <y>0</y>
-     <width>541</width>
-     <height>231</height>
+     <width>311</width>
+     <height>241</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -31,7 +31,7 @@
    <widget class="QPushButton" name="btnRouesAuCentre">
     <property name="geometry">
      <rect>
-      <x>230</x>
+      <x>130</x>
       <y>90</y>
       <width>48</width>
       <height>48</height>
@@ -54,7 +54,7 @@
    <widget class="QPushButton" name="btnAvance">
     <property name="geometry">
      <rect>
-      <x>230</x>
+      <x>130</x>
       <y>30</y>
       <width>48</width>
       <height>48</height>
@@ -77,7 +77,7 @@
    <widget class="QPushButton" name="btnRecule">
     <property name="geometry">
      <rect>
-      <x>230</x>
+      <x>130</x>
       <y>150</y>
       <width>48</width>
       <height>48</height>
@@ -100,7 +100,7 @@
    <widget class="QPushButton" name="btnRouesAGauche">
     <property name="geometry">
      <rect>
-      <x>170</x>
+      <x>70</x>
       <y>90</y>
       <width>48</width>
       <height>48</height>
@@ -123,7 +123,7 @@
    <widget class="QPushButton" name="btnRouesADroite">
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>190</x>
       <y>90</y>
       <width>48</width>
       <height>48</height>
@@ -135,6 +135,222 @@
     <property name="icon">
      <iconset resource="ressources.qrc">
       <normaloff>:/icones/ressources/icones/rd.png</normaloff>:/icones/ressources/icones/rd.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>48</width>
+      <height>48</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnRouesDiagonaleGauche">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>90</y>
+      <width>48</width>
+      <height>48</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="ressources.qrc">
+      <normaloff>:/icones/ressources/icones/rdg.png</normaloff>:/icones/ressources/icones/rdg.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>48</width>
+      <height>48</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnRouesDiagonaleDroite">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>90</y>
+      <width>48</width>
+      <height>48</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="ressources.qrc">
+      <normaloff>:/icones/ressources/icones/rdg.png</normaloff>:/icones/ressources/icones/rdg.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>48</width>
+      <height>48</height>
+     </size>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_2">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>0</y>
+     <width>231</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 170, 0);</string>
+   </property>
+   <property name="title">
+    <string>Pilotage Mode transbordeur</string>
+   </property>
+   <widget class="QPushButton" name="btnRoueTransbordeur">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>30</y>
+      <width>48</width>
+      <height>48</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="ressources.qrc">
+      <normaloff>:/icones/ressources/icones/rt.png</normaloff>:/icones/ressources/icones/rt.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>48</width>
+      <height>48</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnRouesMarcheTransbordeurGauche">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>30</y>
+      <width>48</width>
+      <height>48</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="ressources.qrc">
+      <normaloff>:/icones/ressources/icones/rtg.png</normaloff>:/icones/ressources/icones/rtg.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>48</width>
+      <height>48</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnRouesMarcheTransbordeurDroite">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>30</y>
+      <width>48</width>
+      <height>48</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="ressources.qrc">
+      <normaloff>:/icones/ressources/icones/rtd.png</normaloff>:/icones/ressources/icones/rtd.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>48</width>
+      <height>48</height>
+     </size>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_3">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>90</y>
+     <width>231</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 170, 0);</string>
+   </property>
+   <property name="title">
+    <string>Direction sur place</string>
+   </property>
+   <widget class="QPushButton" name="btnRoueSurPlace">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>30</y>
+      <width>48</width>
+      <height>48</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="ressources.qrc">
+      <normaloff>:/icones/ressources/icones/rsp.png</normaloff>:/icones/ressources/icones/rsp.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>48</width>
+      <height>48</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnMarcheDirGauche">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>30</y>
+      <width>48</width>
+      <height>48</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="ressources.qrc">
+      <normaloff>:/icones/ressources/icones/tspg.png</normaloff>:/icones/ressources/icones/tspg.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>48</width>
+      <height>48</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnMarcheDirDroite">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>30</y>
+      <width>48</width>
+      <height>48</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="ressources.qrc">
+      <normaloff>:/icones/ressources/icones/tspd.png</normaloff>:/icones/ressources/icones/tspd.png</iconset>
     </property>
     <property name="iconSize">
      <size>

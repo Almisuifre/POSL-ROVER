@@ -24,11 +24,19 @@ class PilotageRover : public QWidget, private Ui_PilotageRover
         /* Marche */
         void on_btnAvance_clicked();
         void on_btnRecule_clicked();
+        void on_btnRouesMarcheTransbordeurGauche_clicked();
+        void on_btnRouesMarcheTransbordeurDroite_clicked();
+        void on_btnMarcheDirGauche_clicked();
+        void on_btnMarcheDirDroite_clicked();
 
         /* Roues */
         void on_btnRouesAuCentre_clicked();
         void on_btnRouesAGauche_clicked();
         void on_btnRouesADroite_clicked();
+        void on_btnRouesDiagonaleGauche_clicked();
+        void on_btnRouesDiagonaleDroite_clicked();
+        void on_btnRoueTransbordeur_clicked();
+        void on_btnRoueSurPlace_clicked();
 
 
     signals:
