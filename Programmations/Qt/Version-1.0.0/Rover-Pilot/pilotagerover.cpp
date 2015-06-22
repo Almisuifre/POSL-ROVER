@@ -47,3 +47,17 @@ PilotageRover::on_btnRouesAuCentre_clicked()
     m_comSerie->envoyerData("!,2,90,90,90,90,*");
     emit sendInformations(QString("%1 : %2").arg("Roues au centre", "!,2,90,90,90,90,*"));
 }
+
+void
+PilotageRover::on_btnRouesAGauche_clicked()
+{
+    m_comSerie->envoyerData("!,2,70,110,75,105,*");
+    emit sendInformations(QString("%1 : %2").arg("Roues à gauche", "!,2,70,110,75,105,*"));
+}
+
+void
+PilotageRover::on_btnRouesADroite_clicked()
+{
+    m_comSerie->envoyerData("!,2,105,75,110,70,*");
+    emit sendInformations(QString("%1 : %2").arg("Roues à gauche", "!,2,105,75,110,70,*"));
+}
