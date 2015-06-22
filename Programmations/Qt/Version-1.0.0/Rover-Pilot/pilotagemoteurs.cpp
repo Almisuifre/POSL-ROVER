@@ -1,6 +1,8 @@
 #include "pilotagemoteurs.h"
 
-#include <cmath>
+//#include <cmath>
+
+//#include <QDebug>
 
 
 PilotageMoteurs::PilotageMoteurs(QWidget *parent) : QWidget(parent)
@@ -77,8 +79,9 @@ PilotageMoteurs::delayFromDistanceAndPower()
 
     if(vitesse > 0)
     {
+
         delayMS =  distance / vitesse;
-        delayMS += fmod(distance,vitesse);
+        //delayMS += fmod(distance,vitesse);
         delayMS *= 1000;
     }
 

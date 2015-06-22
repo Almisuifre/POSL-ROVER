@@ -27,6 +27,8 @@ class PilotageRover : public QWidget, private Ui_PilotageRover
 
         /* Roues */
         void on_btnRouesAuCentre_clicked();
+        void on_btnRouesAGauche_clicked();
+
 
     signals:
         void sendInformations(QString informations);
