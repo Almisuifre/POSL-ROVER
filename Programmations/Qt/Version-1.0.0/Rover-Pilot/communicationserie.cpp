@@ -82,6 +82,8 @@ CommunicationSerie::on_btnRechercheCarte_clicked()
 {
     emit sendInformations("Recherche de carte connecté ...");
 
+    cbListeTTY->clear();
+
     // remplissage de la combobox
     foreach (const QSerialPortInfo &serialPortInfo, QSerialPortInfo::availablePorts())
         cbListeTTY->addItem(serialPortInfo.portName());
