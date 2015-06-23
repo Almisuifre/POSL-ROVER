@@ -98,12 +98,22 @@ CommunicationSerie::deconnection()
 void
 CommunicationSerie::envoyerData(QString data)
 {
-    if(m_connectionOK && m_serial->isOpen()) m_serial->write(data.toStdString().c_str());
+    /*if(m_connectionOK && m_serial->isOpen()) m_serial->write(data.toStdString().c_str());
 
 
     if(!m_serial->waitForReadyRead(DELAY_RECEPTION_MS))
     {
         emit sendInformations("Aucune confirmation de bonne réception n'a été reçue !");
+    }*/
+
+    if(m_connectionOK && m_serial->isOpen())
+    {
+        m_serial->write(data.toStdString().c_str());
+
+        if(!m_serial->waitForReadyRead(DELAY_RECEPTION_MS))
+        {
+            emit sendInformations("Aucune confirmation de bonne réception n'a été reçue !");
+        }
     }
 }
 

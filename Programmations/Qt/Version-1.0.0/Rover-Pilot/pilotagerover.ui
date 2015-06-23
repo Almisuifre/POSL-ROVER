@@ -180,7 +180,7 @@
     </property>
     <property name="icon">
      <iconset resource="ressources.qrc">
-      <normaloff>:/icones/ressources/icones/rdg.png</normaloff>:/icones/ressources/icones/rdg.png</iconset>
+      <normaloff>:/icones/ressources/icones/rdd.png</normaloff>:/icones/ressources/icones/rdd.png</iconset>
     </property>
     <property name="iconSize">
      <size>

@@ -37,7 +37,7 @@ PilotageRover::on_btnRecule_clicked()
     data.append(QString::number(distanceRoute));
     data.append(",*");
     m_comSerie->envoyerData(data);
-    emit sendInformations(QString("%1 : %2 sur %3").arg("Avance", QString::number(m_pilotageMoteurs->getPowerValue()), QString::number(distanceRoute)));
+    emit sendInformations(QString("%1 : %2 sur %3").arg("Recule", QString::number(m_pilotageMoteurs->getPowerValue()), QString::number(distanceRoute)));
 
     //m_comSerie->envoyerData(QString("!,1,0,%1,0,%1,0,%1,0,%1,1000,*").arg(m_pilotageMoteurs->getPowerValue()));
     //emit sendInformations(QString("%1 : %2 sur %3").arg("Recule", QString::number(m_pilotageMoteurs->getPowerValue()), "1000"));
@@ -51,7 +51,7 @@ PilotageRover::on_btnRouesMarcheTransbordeurGauche_clicked()
     data.append(QString::number(distanceRoute));
     data.append(",*");
     m_comSerie->envoyerData(data);
-    emit sendInformations(QString("%1 : %2 sur %3").arg("Avance", QString::number(m_pilotageMoteurs->getPowerValue()), QString::number(distanceRoute)));
+    emit sendInformations(QString("%1 : %2 sur %3").arg("Transbordeur avance à gauche", QString::number(m_pilotageMoteurs->getPowerValue()), QString::number(distanceRoute)));
 }
 
 void
@@ -62,7 +62,7 @@ PilotageRover::on_btnRouesMarcheTransbordeurDroite_clicked()
     data.append(QString::number(distanceRoute));
     data.append(",*");
     m_comSerie->envoyerData(data);
-    emit sendInformations(QString("%1 : %2 sur %3").arg("Avance", QString::number(m_pilotageMoteurs->getPowerValue()), QString::number(distanceRoute)));
+    emit sendInformations(QString("%1 : %2 sur %3").arg("Transbordeur avance à droite", QString::number(m_pilotageMoteurs->getPowerValue()), QString::number(distanceRoute)));
 }
 
 void
@@ -73,7 +73,7 @@ PilotageRover::on_btnMarcheDirGauche_clicked()
     data.append(QString::number(distanceRoute));
     data.append(",*");
     m_comSerie->envoyerData(data);
-    emit sendInformations(QString("%1 : %2 sur %3").arg("Avance", QString::number(m_pilotageMoteurs->getPowerValue()), QString::number(distanceRoute)));
+    emit sendInformations(QString("%1 : %2 sur %3").arg("Tourne à gauche", QString::number(m_pilotageMoteurs->getPowerValue()), QString::number(distanceRoute)));
 }
 
 void
@@ -84,7 +84,7 @@ PilotageRover::on_btnMarcheDirDroite_clicked()
     data.append(QString::number(distanceRoute));
     data.append(",*");
     m_comSerie->envoyerData(data);
-    emit sendInformations(QString("%1 : %2 sur %3").arg("Avance", QString::number(m_pilotageMoteurs->getPowerValue()), QString::number(distanceRoute)));
+    emit sendInformations(QString("%1 : %2 sur %3").arg("Tourne à droite", QString::number(m_pilotageMoteurs->getPowerValue()), QString::number(distanceRoute)));
 }
 
 void
@@ -133,5 +133,5 @@ void
 PilotageRover::on_btnRoueSurPlace_clicked()
 {
     m_comSerie->envoyerData("!,2,140,40,40,140,*");
-    emit sendInformations(QString("%1 : %2").arg("Roues transbordeur", "!,2,140,40,40,140,*"));
+    emit sendInformations(QString("%1 : %2").arg("Roues tourner sur place", "!,2,140,40,40,140,*"));
 }
