@@ -27,6 +27,8 @@ class CommunicationSerie : public QWidget, private Ui_CommunicationSerie
 
     private slots:
         void on_btnConnectionPort_clicked();
+        void on_btnRechercheCarte_clicked();
+
         void on_cbListeTTY_currentIndexChanged(int);
         void readData();
 
