@@ -115,6 +115,10 @@ CommunicationSerie::envoyerData(QString data)
             emit sendInformations("Aucune confirmation de bonne réception n'a été reçue !");
         }
     }
+    else
+    {
+        emit sendInformations(QString("Aucune carte n'est connecté."));
+    }
 }
 
 void
