@@ -18,6 +18,8 @@ class CommunicationSerie : public QWidget, private Ui_CommunicationSerie
         QSerialPort *m_serial;
         bool m_connectionOK;
 
+        QString m_cartesConnectees;
+
     public:
         explicit CommunicationSerie(QWidget *parent = 0);
         ~CommunicationSerie();

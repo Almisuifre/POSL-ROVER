@@ -1,17 +1,24 @@
 #include "communicationserie.h"
 
+/* Constructeur */
 CommunicationSerie::CommunicationSerie(QWidget *parent) : QWidget(parent)
 {
     setupUi(this);
 
     m_serial = NULL;
     m_connectionOK = false;
+    m_cartesConnectees = "";
 
     // remplissage de la combobox
+    int num = 0;
     foreach (const QSerialPortInfo &serialPortInfo, QSerialPortInfo::availablePorts())
+    {
+        m_cartesConnectees += num + "|" + serialPortInfo.portName() + "|" + serialPortInfo.hasProductIdentifier() + "|" + serialPortInfo.manufacturer() + "|" + serialPortInfo.serialNumber();
         cbListeTTY->addItem(serialPortInfo.portName());
+    }
 }
 
+/* Déconstructeur */
 CommunicationSerie::~CommunicationSerie()
 {
     if(m_connectionOK)
@@ -21,7 +28,7 @@ CommunicationSerie::~CommunicationSerie()
     }
 }
 
-
+/* Connexion au port */
 void
 CommunicationSerie::on_btnConnectionPort_clicked()
 {
@@ -77,6 +84,7 @@ CommunicationSerie::on_btnConnectionPort_clicked()
 */
 }
 
+/* Mise à jour des cartes branchés */
 void
 CommunicationSerie::on_btnRechercheCarte_clicked()
 {
@@ -89,13 +97,15 @@ CommunicationSerie::on_btnRechercheCarte_clicked()
         cbListeTTY->addItem(serialPortInfo.portName());
 }
 
-
+/* Mise à jour de conexion */
 void
 CommunicationSerie::on_cbListeTTY_currentIndexChanged(int)
 {
+    //Connexion
     btnConnectionPort->setText(QString("Connection sur %1").arg(cbListeTTY->currentText()));
 }
 
+/* Déconnexion */
 void
 CommunicationSerie::deconnection()
 {
@@ -107,6 +117,7 @@ CommunicationSerie::deconnection()
     }
 }
 
+/* Envoyer des datas */
 void
 CommunicationSerie::envoyerData(QString data)
 {
@@ -133,6 +144,7 @@ CommunicationSerie::envoyerData(QString data)
     }
 }
 
+/* Recevoir des datas */
 void
 CommunicationSerie::readData()
 {
