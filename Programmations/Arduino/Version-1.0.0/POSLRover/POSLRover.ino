@@ -156,27 +156,7 @@ void serialEvent1() {
 
 void traitementMessage(String message)
 {
-  /*
-  Exemples (moteur):
-          dir,vitesseAVG,dir,vitesseARG,dir,vitesseAVD,dir,vitesseARG
-      !,1,0,0,0,0,0,0,0,0,* = STOP
-      !,1,1,100,1,100,1,100,1,100,* = Moteurs Marche AV
-      !,1,0,100,0,100,0,100,0,100,* = Moteurs Marche AR
-      
-      !,1,1,100,0,100,1,100,0,100,* = Tourner à droite sur place
-      !,1,0,100,1,100,0,100,1,100,* = Tourner à gauche sur place
-      
-      !,1,2,102,3,103,4,104,5,105,*
-      
-    Exemples (Directions):
-          AVG,ARG,AVD,ARD
-      !,2,90,90,90,90,*  = Roues au centre
-      !,2,70,110,70,110,*  = Roues permettant de tourner à gauche
-      !,2,110,70,110,70,* = Roues permettant de tournet à droite
-      !,2,70,70,70,70,*  = En diagonale gauche
-      !,2,110,110,110,110,*  = En diagonale droite
-      !,2,140,40,40,140,*  = Tourner sur place
-  */
+  Serial.println(message);
   String data;
   int instruction = 0;
   int data1 = 0, data2 = 0, data3 = 0, data4 = 0, data5 = 0, data6 = 0, data7 = 0, data8 = 0, data9 = 0; 
@@ -212,7 +192,7 @@ void traitementMessage(String message)
         if(i == 5) data6 = data.toInt();
         if(i == 6) data7 = data.toInt();
         if(i == 7) data8 = data.toInt();
-        if(i == 8) data9 = data.toInt();  //Ajouter pour tester    
+        if(i == 8) data9 = data.toInt();   
       }
       
       MoteurAvantGauche.Action(data1, data2);
@@ -227,6 +207,10 @@ void traitementMessage(String message)
       MoteurAvantDroit.Action(0, 0);
       MoteurArriereGauche.Action(0, 0);
       MoteurArriereDroit.Action(0, 0);
+      
+      
+      //Serial.println("ok");
+      Serial1.println("ok");
       
       break;
   
@@ -252,6 +236,8 @@ void traitementMessage(String message)
       ServoArrieGauche.write(positionServoArG);
       ServoAvantDroit.write(positionServoAvD);
       ServoArrieDroit.write(positionServoArD);
+
+      Serial1.println("ok");
       
       break;
   }

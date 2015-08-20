@@ -97,7 +97,7 @@ CommunicationSerie::on_btnRechercheCarte_clicked()
         cbListeTTY->addItem(serialPortInfo.portName());
 }
 
-/* Mise à jour de conexion */
+/* Mise à jour de connexion */
 void
 CommunicationSerie::on_cbListeTTY_currentIndexChanged(int)
 {
